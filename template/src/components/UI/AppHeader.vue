@@ -1,5 +1,7 @@
 <script setup>
 // Components
+// Routing
+import { RouterLink } from "vue-router";
 // const props = defineProps({})
 // const emit = defineEmits()
 </script>
@@ -9,9 +11,12 @@
     <div>
       <div class="size-10 rounded-full bg-blue-500"></div>
     </div>
-    <div>
-      <h1 class="font-bold text-xl">Page Title</h1>
+    <div class="flex-ic-js">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/projects">Projects</RouterLink>
     </div>
-    <div>User Menu</div>
+    <div>
+      <div class="size-10 rounded-full bg-blue-500"></div>
+    </div>
   </section>
 </template>
