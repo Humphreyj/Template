@@ -1,6 +1,6 @@
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease-in;
 }
 
 .fade-enter-from,
@@ -9,7 +9,7 @@
 }
 
 .slide-right-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease-in;
 }
 
 .slide-right-leave-active {
@@ -22,7 +22,7 @@
   opacity: 0;
 }
 .slide-left-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease-in;
 }
 
 .slide-left-leave-active {
