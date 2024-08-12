@@ -1,10 +1,11 @@
 <script setup>
 // Components
-import PageLayout from "@/components/UI/PageLayout.vue";
 // const props = defineProps({})
 // const emit = defineEmits()
 </script>
 
 <template>
-  <PageLayout />
+  <div
+    class="border bg-white rounded-lg border-gray-600 shadow h-32 w-full"
+  ></div>
 </template>
