@@ -18,6 +18,9 @@
     .flex-col-is-jc {
         @apply flex flex-col items-start justify-center;
     }
+    .flex-col-is-js {
+        @apply flex flex-col items-start justify-start;
+    }
     .flex-col-ic-jc {
         @apply flex flex-col items-center justify-center;
     }

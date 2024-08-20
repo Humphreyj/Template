@@ -16,4 +16,9 @@ export const componentStyles = {
         disabledButton:
             'border border-gray-700 rounded-lg bg-gray-200 text-gray-500 py-1 px-2 shadow drop-shadow opacity-75 disabled cursor-not-allowed',
     },
+    textInput: {
+        containerClass: 'flex-col-is-js',
+        labelClass: 'font-bold ',
+        inputClass: 'border p-1 border-gray-700 rounded-md',
+    },
 }
