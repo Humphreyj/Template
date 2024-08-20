@@ -1,0 +1,19 @@
+export const componentStyles = {
+    cardStyles: {
+        containerClass:
+            'border bg-white rounded-lg border-gray-600 shadow w-full',
+        cardTitleText: 'w-fit text-2xl',
+        cardContentText: '',
+    },
+    navLink: {
+        textClass: 'text-lg text-gray-700 font-bold',
+    },
+    buttons: {
+        defaultButton:
+            'border border-gray-700 rounded-lg bg-blue-400 text-white  shadow-gray-600 py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
+        dangerButton:
+            'border border-gray-700 rounded-lg bg-red-500 text-white py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
+        disabledButton:
+            'border border-gray-700 rounded-lg bg-gray-200 text-gray-500 py-1 px-2 shadow drop-shadow opacity-75 disabled cursor-not-allowed',
+    },
+}

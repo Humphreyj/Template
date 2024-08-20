@@ -1,28 +1,23 @@
 import { ref } from 'vue'
 import { twMerge } from 'tailwind-merge'
+import { componentStyles } from '@/CSS/componentStyles'
 
-const componentStyles = {
-    cardStyles: {
-        containerClass:
-            'border bg-white rounded-lg border-gray-600 shadow w-full',
-        cardTitleText: 'w-fit text-2xl',
-        cardContentText: '',
-    },
-    navLink: {
-        textClass: 'text-lg text-gray-400',
-    },
-}
-
-export const getStyles = (incoming, element) => {
-    let keys = Object.keys(incoming)
+export const getStyles = (props, element, category) => {
+    let keys = Object.keys(props)
     let styles = {}
     keys.forEach((key) => {
-        styles[`${key}`] = twMerge(
-            componentStyles[`${element}`][`${key}`],
-            incoming[`${key}`]
-        )
+        if (category) {
+            styles[`${key}`] = twMerge(
+                componentStyles[`${category}`][`${element}`],
+                props[`${key}`]
+            )
+        } else {
+            styles[`${key}`] = twMerge(
+                componentStyles[`${element}`][`${key}`],
+                props[`${key}`]
+            )
+        }
     })
-
     const classes = ref(styles)
     return classes
 }
