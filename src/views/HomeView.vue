@@ -5,8 +5,16 @@ import PageLayout from '@/components/UI/PageLayout.vue'
 import Card from '@/components/UI/Card.vue'
 import Button from '@/components/UI/Button.vue'
 import TextInput from '@/components/inputs/TextInput.vue'
+// Utils
+import { format } from '../utils/formatText'
 // const props = defineProps({})
 // const emit = defineEmits()
+
+const handleFormat = () => {
+    let f = format('Hello World')
+    let title = f.title()
+    console.log(title)
+}
 </script>
 
 <template>
@@ -18,7 +26,7 @@ import TextInput from '@/components/inputs/TextInput.vue'
                     <TextInput label="Test Input" />
                 </div>
                 <div class="flex-ic-jc mt-8 gap-4">
-                    <Button />
+                    <Button @click="handleFormat" />
                     <Button button-type="disabledButton" :disabled="true" />
                     <Button button-type="dangerButton" />
                 </div>

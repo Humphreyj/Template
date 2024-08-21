@@ -31,6 +31,11 @@ const classes = ref(getStyles(props, 'textInput'))
 <template>
     <div :class="classes.containerClass">
         <label :for="inputName" :class="classes.labelClass">{{ label }}</label>
-        <input :name="inputName" type="text" :class="classes.inputClass" />
+        <input
+            :name="inputName"
+            :v-model="modelValue"
+            type="text"
+            :class="classes.inputClass"
+        />
     </div>
 </template>
