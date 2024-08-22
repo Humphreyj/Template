@@ -3,6 +3,10 @@ import { ref } from 'vue'
 import { getStyles } from '@/composables/getStyles'
 // Components
 const props = defineProps({
+    modelValue: {
+        type: String,
+        default: 'Default Text',
+    },
     label: {
         type: String,
         default: 'Input Label',
@@ -24,7 +28,7 @@ const props = defineProps({
         default: 'default-input',
     },
 })
-// const emit = defineEmits()
+const emit = defineEmits(['update:modelValue'])
 const classes = ref(getStyles(props, 'textInput'))
 </script>
 
@@ -33,9 +37,10 @@ const classes = ref(getStyles(props, 'textInput'))
         <label :for="inputName" :class="classes.labelClass">{{ label }}</label>
         <input
             :name="inputName"
-            :v-model="modelValue"
+            :value="modelValue"
             type="text"
             :class="classes.inputClass"
+            @input="$emit('update:modelValue', $event.target.value)"
         />
     </div>
 </template>

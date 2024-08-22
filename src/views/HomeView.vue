@@ -15,6 +15,7 @@ const handleFormat = () => {
     let title = f.title()
     console.log(title)
 }
+const output = ref('A')
 </script>
 
 <template>
@@ -23,7 +24,8 @@ const handleFormat = () => {
             <section class="mt-8 w-10/12 h-dvh">
                 <Card containerClass="h-32" />
                 <div class="flex-ic-jc mt-8 gap-4">
-                    <TextInput label="Test Input" />
+                    <p>{{ output }}</p>
+                    <TextInput label="Test Input" v-model="output" />
                 </div>
                 <div class="flex-ic-jc mt-8 gap-4">
                     <Button @click="handleFormat" />
