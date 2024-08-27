@@ -5,6 +5,7 @@ import PageLayout from '@/components/UI/PageLayout.vue'
 import Card from '@/components/UI/Card.vue'
 import Button from '@/components/UI/Button.vue'
 import TextInput from '@/components/inputs/TextInput.vue'
+import TextBlock from '@/components/UI/TextBlock.vue'
 // Utils
 import { format } from '../utils/formatText'
 // const props = defineProps({})
@@ -15,7 +16,7 @@ const handleFormat = () => {
     let title = f.title()
     console.log(title)
 }
-const output = ref('A')
+const output = ref('')
 </script>
 
 <template>
@@ -24,8 +25,10 @@ const output = ref('A')
             <section class="mt-8 w-10/12 h-dvh">
                 <Card containerClass="h-32" />
                 <div class="flex-ic-jc mt-8 gap-4">
-                    <p>{{ output }}</p>
                     <TextInput label="Test Input" v-model="output" />
+                    <div>
+                        <TextBlock :text-content="output" />
+                    </div>
                 </div>
                 <div class="flex-ic-jc mt-8 gap-4">
                     <Button @click="handleFormat" />
