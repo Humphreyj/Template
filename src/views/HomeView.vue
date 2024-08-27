@@ -17,11 +17,17 @@ import { format } from '../utils/formatText'
 const { sampleUser } = storeToRefs(usePrimaryStore())
 
 const handleFormat = () => {
-    let f = format('Hello World')
+    // Added in this dummy data for function testing
+    let f = format('Hello_World')
     let title = f.title()
+    
     let newDate = new Date()
-
-    console.log(newDate.toISOString())
+    let d = format(newDate)
+    let date = d.date()
+    let p = format('1234567890')
+    let phone = p.phone()
+    let s = format('123456789')
+    s.ssn()
 }
 const output = ref('')
 </script>
