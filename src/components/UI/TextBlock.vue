@@ -3,7 +3,7 @@
 const props = defineProps({
     label: {
         type: String,
-        default: 'Label',
+        default: null,
     },
     textContent: {
         type: String,
@@ -15,7 +15,11 @@ const props = defineProps({
 
 <template>
     <div class="flex-col-is-js">
-        <p>{{ label }}</p>
-        <p>{{ textContent }}</p>
+        <p class="font-bold text-gray-600 opacity-60" v-if="label">
+            {{ label }}
+        </p>
+        <div class="min-h-6">
+            <p class="font-semibold">{{ textContent }}</p>
+        </div>
     </div>
 </template>

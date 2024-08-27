@@ -17,8 +17,8 @@ export const componentStyles = {
             'border border-gray-700 rounded-lg bg-gray-200 text-gray-500 py-1 px-2 shadow drop-shadow opacity-75 disabled cursor-not-allowed',
     },
     textInput: {
-        containerClass: 'flex-col-is-js',
+        containerClass: 'flex-col-is-js w-full',
         labelClass: 'font-bold ',
-        inputClass: 'border p-1 border-gray-700 rounded-md',
+        inputClass: 'border p-1 border-gray-700 rounded-md w-full',
     },
 }
