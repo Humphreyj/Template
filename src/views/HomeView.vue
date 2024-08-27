@@ -19,7 +19,9 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
 const handleFormat = () => {
     let f = format('Hello World')
     let title = f.title()
-    console.log(sampleUser.value)
+    let newDate = new Date()
+
+    console.log(newDate.toISOString())
 }
 const output = ref('')
 </script>
