@@ -4,30 +4,37 @@ export function format(input) {
         title: function () {
             // This function should take a string like `user_name`
             // and transform it to 'User Name'
-            text = text.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-            console.log('format title: ', text)
+            text = text
+                .split('_')
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ')
             return text
         },
         phone: function () {
-            // This function should take a string like `1233331232`
-            // and transform it to `123-333-1232`
-            var cleaned = ('' + text).replace(/\D/g, '');
-            var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-            if (match) {
-                text = match[1] + '-' + match[2] + '-' + match[3];
+            // Clean the input by removing all non-digit characters
+            var cleaned = ('' + text).replace(/\D/g, '')
+
+            // Check the length and add dashes accordingly
+            if (cleaned.length > 3) {
+                text = cleaned.slice(0, 3) + '-' + cleaned.slice(3, 6)
+                if (cleaned.length > 6) {
+                    text += '-' + cleaned.slice(6, 10)
+                }
+            } else {
+                text = cleaned
             }
-            console.log('format phone', text)
+
             return text
         },
         ssn: function () {
             // This function should take a string like `123333123`
             // and transform it to `123-33-1232`
-            let cleaned = ('' + text).replace(/\D/g, '');
-            let match = cleaned.match(/^(\d{3})(\d{2})(\d{4})$/);
-            if(match){
-                text = match[1] + '-' + match[2] + '-' + match[3];
+            let cleaned = ('' + text).replace(/\D/g, '')
+            let match = cleaned.match(/^(\d{3})(\d{2})(\d{4})$/)
+            if (match) {
+                text = match[1] + '-' + match[2] + '-' + match[3]
             }
-            console.log('format ssn', text)
+
             return text
         },
         date: function () {
@@ -42,17 +49,31 @@ export function format(input) {
                 hour: '2-digit',
                 minute: '2-digit',
                 second: '2-digit',
-                hour12: true
-            };
-              
-            text = new Intl.DateTimeFormat('en-US', options).format(text);
-            console.log('format date', text)
-            
+                hour12: true,
+            }
+
+            text = new Intl.DateTimeFormat('en-US', options).format(text)
+
             return text
         },
     }
 }
 
-// export function format() {
-
-// }
+export const handleFormat = (input, type) => {
+    const formatText = format(input)
+    let result
+    switch (type) {
+        case 'phone':
+            result = formatText.phone()
+            break
+        case 'date':
+            result = formatText.date()
+            break
+        case 'ssn':
+            result = formatText.ssn()
+            break
+        default:
+            return input
+    }
+    return result
+}
