@@ -1,20 +1,25 @@
 <script setup>
 import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
 // Components
 import PageLayout from '@/components/UI/PageLayout.vue'
 import Card from '@/components/UI/Card.vue'
 import Button from '@/components/UI/Button.vue'
 import TextInput from '@/components/inputs/TextInput.vue'
 import TextBlock from '@/components/UI/TextBlock.vue'
+// Pinia
+import { usePrimaryStore } from '../stores/primaryStore'
 // Utils
 import { format } from '../utils/formatText'
 // const props = defineProps({})
 // const emit = defineEmits()
 
+const { sampleUser } = storeToRefs(usePrimaryStore())
+
 const handleFormat = () => {
     let f = format('Hello World')
     let title = f.title()
-    console.log(title)
+    console.log(sampleUser.value)
 }
 const output = ref('')
 </script>
