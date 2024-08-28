@@ -1,5 +1,7 @@
 <script setup>
 // Components
+import { ref } from 'vue'
+import { getStyles } from '@/composables/getStyles'
 const props = defineProps({
     label: {
         type: String,
@@ -9,17 +11,26 @@ const props = defineProps({
         type: String,
         default: 'Text Content',
     },
+    labelClass: {
+        type: String, 
+        default: ''
+    },
+    contentClass: {
+        type: String, 
+        default: ''
+    }
 })
-// const emit = defineEmits()
+const classes = ref(getStyles(props, 'textBlock'))
+
 </script>
 
 <template>
-    <div class="flex-col-is-js">
-        <p class="font-bold text-gray-600 opacity-60" v-if="label">
+    <div :class="classes.containerClass">
+        <p :class="classes.labelClass" v-if="label">
             {{ label }}
         </p>
         <div class="min-h-6">
-            <p class="font-semibold">{{ textContent }}</p>
+            <p :class="classes.contentClass">{{ textContent }}</p>
         </div>
     </div>
 </template>
