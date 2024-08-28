@@ -33,7 +33,7 @@ const team = [
                     <section class="flex-col w-1/2 text-left">
                         <TextBlock 
                             :text-content="title" 
-                            contentClass="text-2xl font-bold"
+                            content-class="text-2xl font-bold"
                         />
                         <section class="flex flex-row items-center h-20" v-for="member in team">
                             <img 
@@ -45,9 +45,9 @@ const team = [
                             >
                             <TextBlock
                                 :label="member.name"
-                                :textContent="member.title"
-                                labelClass="font-bold text-black-600"
-                                contentClass="text-xs"
+                                :text-content="member.title"
+                                label-class="font-bold text-black-600 opacity-1"
+                                content-class="text-xs"
                             />
                             <div class="flex flex-row w-4/5 justify-end">
                                 <Button 
