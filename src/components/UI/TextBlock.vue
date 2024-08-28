@@ -9,17 +9,25 @@ const props = defineProps({
         type: String,
         default: 'Text Content',
     },
+    labelClass: {
+        type: String,
+        default: 'font-bold text-gray-600 opacity-60'
+    },
+    contentClass: {
+        type: String,
+        default: 'font-semibold'
+    }
 })
 // const emit = defineEmits()
 </script>
 
 <template>
     <div class="flex-col-is-js">
-        <p class="font-bold text-gray-600 opacity-60" v-if="label">
+        <p :class="labelClass" v-if="label">
             {{ label }}
         </p>
         <div class="min-h-6">
-            <p class="font-semibold">{{ textContent }}</p>
+            <p :class="contentClass">{{ textContent }}</p>
         </div>
     </div>
 </template>
