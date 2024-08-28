@@ -30,7 +30,7 @@ const handleFormat = () => {
     let s = format('123456789')
     s.ssn()
 }
-const output = ref('')
+//const output = ref('')
 </script>
 
 <template>
