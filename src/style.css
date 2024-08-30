@@ -1,4 +1,5 @@
 @import './CSS/flexHelpers.css';
+@import './CSS/text.css';
 @import './CSS/transitions.css';
 @tailwind base;
 @tailwind components;

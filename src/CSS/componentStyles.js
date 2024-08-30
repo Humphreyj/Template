@@ -1,7 +1,7 @@
 export const componentStyles = {
     cardStyles: {
         containerClass:
-            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-slate-700',
+            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-cardBackgroundDark',
         cardTitleText: 'w-fit text-2xl dark:text-white',
         cardContentText: '',
     },
@@ -10,7 +10,7 @@ export const componentStyles = {
     },
     buttons: {
         defaultButton:
-            'border border-gray-700 rounded-lg bg-blue-400 text-white  shadow-gray-600 py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
+            'border border-gray-700 rounded-lg bg-blue-500 dark:bg-blue-600 text-white dark:text-gray-100 py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
         dangerButton:
             'border border-gray-700 rounded-lg bg-red-500 text-white py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
         disabledButton:
@@ -18,12 +18,15 @@ export const componentStyles = {
     },
     textInput: {
         containerClass: 'flex-col-is-js w-full ',
-        labelClass: 'font-bold dark:text-white',
-        inputClass: 'border p-1 border-gray-700 rounded-md w-full ',
+        labelClass:
+            'font-bold text-gray-900 mb-1 dark:text-white dark:opacity-95',
+        inputClass:
+            'border p-1 border-gray-700 dark:border-gray-600 shadow-md rounded-md w-full dark:bg-gray-700 text-lg primary-text dark:shadow-slate-900',
     },
     textBlock: {
-        containerClass: 'flex-col-ic-jc w-full dark:text-white',
-        labelClass: 'font-bold text-gray-600 opacity-60 text-center dark:text-white',
+        containerClass: 'flex-col-ic-jc w-full',
+        labelClass:
+            'font-bold primary-text dark:opacity-95 text-center dark:text-white',
         contentClass: 'font-semibold dark:text-white',
     },
 }

@@ -25,6 +25,6 @@
         @apply flex flex-col items-center justify-center;
     }
     .flex-col-ic-js {
-        @apply flex flex-col items-center justify-center;
+        @apply flex flex-col items-center justify-start;
     }
 }

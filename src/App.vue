@@ -5,7 +5,7 @@ import PageLayout from '@/components/UI/PageLayout.vue'
 </script>
 
 <template>
-    <div class="bg-gray-100">
+    <div class="bg-slate-100 dark:bg-appBackground">
         <AppHeader />
         <RouterView v-slot="{ Component, route }">
             <!-- Use a custom transition or fallback to `fade` -->
