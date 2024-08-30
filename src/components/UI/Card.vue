@@ -11,7 +11,6 @@ const props = defineProps({
         default: '',
     },
 })
-// const emit = defineEmits()
 
 const classes = getStyles(props, 'cardStyles')
 </script>
