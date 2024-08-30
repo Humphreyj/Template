@@ -1,6 +1,9 @@
 <script setup>
 import { getStyles } from '@/composables/getStyles'
+import { useDark, useToggle } from '@vueuse/core'
+
 // Components
+import Button from '@/components/UI/Button.vue'
 // Routing
 import { RouterLink } from 'vue-router'
 const props = defineProps({
@@ -9,6 +12,8 @@ const props = defineProps({
         default: '',
     },
 })
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 // const emit = defineEmits()
 const classes = getStyles(props, 'navLink')
 </script>
@@ -23,7 +28,10 @@ const classes = getStyles(props, 'navLink')
             <RouterLink to="/projects">Projects</RouterLink>
         </div>
         <div>
-            <div class="size-10 rounded-full bg-blue-500"></div>
+            <Button 
+                @click="toggleDark()"
+                :text="isDark ? '&#9788;' : '&#9789;'"
+            />
         </div>
     </section>
 </template>

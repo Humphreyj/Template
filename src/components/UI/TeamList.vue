@@ -25,9 +25,9 @@ const team = [
 
 </script>
 <template>
-    <section class="mt-8 w-100 h-dvh">
+    <section class="mt-8 w-100 h-dvh ">
         <Card>
-            <section class="flex-col w-1/2 text-left">
+            <section class="flex-col w-3/4 text-left">
                 <TextBlock 
                     :text-content="title" 
                     content-class="text-2xl font-bold"
