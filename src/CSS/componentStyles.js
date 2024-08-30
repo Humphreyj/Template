@@ -1,7 +1,7 @@
 export const componentStyles = {
     cardStyles: {
         containerClass:
-            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-slate-700',
+            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-cardBackgroundDark',
         cardTitleText: 'w-fit text-2xl dark:text-white',
         cardContentText: '',
     },
@@ -18,12 +18,14 @@ export const componentStyles = {
     },
     textInput: {
         containerClass: 'flex-col-is-js w-full ',
-        labelClass: 'font-bold dark:text-white',
-        inputClass: 'border p-1 border-gray-700 rounded-md w-full ',
+        labelClass: 'font-bold primary-text',
+        inputClass:
+            'border p-1 border-gray-700 rounded-md w-full dark:bg-gray-600 primary-text',
     },
     textBlock: {
         containerClass: 'flex-col-ic-jc w-full dark:text-white',
-        labelClass: 'font-bold text-gray-600 opacity-60 text-center dark:text-white',
+        labelClass:
+            'font-bold text-gray-600 opacity-60 text-center dark:text-white',
         contentClass: 'font-semibold dark:text-white',
     },
 }

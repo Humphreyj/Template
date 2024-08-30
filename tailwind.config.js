@@ -2,7 +2,15 @@
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,vue}'],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                appBackground: '#272d35',
+                cardBackgroundDark: '#0e1f38',
+                primaryText: '#161b23',
+                primaryTextDark: '#edf0f4',
+                secondaryText: '#9399A1',
+            },
+        },
     },
     darkMode: ['class'],
     plugins: [],
