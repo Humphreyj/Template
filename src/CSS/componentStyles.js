@@ -1,8 +1,8 @@
 export const componentStyles = {
     cardStyles: {
         containerClass:
-            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full',
-        cardTitleText: 'w-fit text-2xl',
+            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-slate-700',
+        cardTitleText: 'w-fit text-2xl dark:text-white',
         cardContentText: '',
     },
     navLink: {
@@ -17,13 +17,13 @@ export const componentStyles = {
             'border border-gray-700 rounded-lg bg-gray-200 text-gray-500 py-1 px-2 shadow drop-shadow opacity-75 disabled cursor-not-allowed',
     },
     textInput: {
-        containerClass: 'flex-col-is-js w-full',
-        labelClass: 'font-bold ',
-        inputClass: 'border p-1 border-gray-700 rounded-md w-full',
+        containerClass: 'flex-col-is-js w-full ',
+        labelClass: 'font-bold dark:text-white',
+        inputClass: 'border p-1 border-gray-700 rounded-md w-full ',
     },
     textBlock: {
-        containerClass: 'flex-col-is-js w-full',
-        labelClass: 'font-bold text-gray-600 opacity-60',
-        contentClass: 'font-semibold'
+        containerClass: 'flex-col-is-js w-full dark:text-white',
+        labelClass: 'font-bold text-gray-600 opacity-60 dark:text-white',
+        contentClass: 'font-semibold dark:text-white'
     }
 }
