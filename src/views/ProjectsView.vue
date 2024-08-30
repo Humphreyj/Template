@@ -7,13 +7,12 @@ import TeamList from '@/components/UI/TeamList.vue'
 // const emit = defineEmits()
 
 const text = 'poggers'
-
 </script>
 
 <template>
     <PageLayout>
         <template #main-content>
-            <section class="mt-8 w-10/12 h-dvh">
+            <section class="mt-8 w-11/12 md:w-10/12 lg:w-5/12 flex-col-ic-js">
                 <Card>
                     <template #card-content>
                         <h4 class="w-fit text-2xl">

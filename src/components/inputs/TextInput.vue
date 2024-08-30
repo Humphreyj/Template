@@ -1,7 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { getStyles } from '@/composables/getStyles'
 // Components
+// Utils
+import { handleFormat } from '@/utils/formatText'
+
 const props = defineProps({
     modelValue: {
         type: String,
@@ -10,6 +13,12 @@ const props = defineProps({
     label: {
         type: String,
         default: 'Input Label',
+    },
+    format: {
+        type: String,
+    },
+    maxLength: {
+        type: String,
     },
     containerClass: {
         type: String,
@@ -30,6 +39,20 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:modelValue'])
 const classes = ref(getStyles(props, 'textInput'))
+
+const inputValue = ref(props.modelValue)
+
+const handleInput = (e, type) => {
+    inputValue.value = e.target.value
+    // let result = handleFormat(inputValue.value, type)
+
+    // emit('update:modelValue', result)
+}
+
+watch(inputValue, (newVal) => {
+    inputValue.value = handleFormat(newVal, props.format)
+    emit('update:modelValue', inputValue.value)
+})
 </script>
 
 <template>
@@ -37,10 +60,11 @@ const classes = ref(getStyles(props, 'textInput'))
         <label :for="inputName" :class="classes.labelClass">{{ label }}</label>
         <input
             :name="inputName"
-            :value="modelValue"
+            :value="inputValue"
             type="text"
+            :maxlength="maxLength"
             :class="classes.inputClass"
-            @input="$emit('update:modelValue', $event.target.value)"
+            @input="($event) => handleInput($event, format)"
         />
     </div>
 </template>
