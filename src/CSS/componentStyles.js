@@ -22,8 +22,8 @@ export const componentStyles = {
         inputClass: 'border p-1 border-gray-700 rounded-md w-full ',
     },
     textBlock: {
-        containerClass: 'flex-col-is-js w-full dark:text-white',
-        labelClass: 'font-bold text-gray-600 opacity-60 dark:text-white',
-        contentClass: 'font-semibold dark:text-white'
-    }
+        containerClass: 'flex-col-ic-jc w-full dark:text-white',
+        labelClass: 'font-bold text-gray-600 opacity-60 text-center dark:text-white',
+        contentClass: 'font-semibold dark:text-white',
+    },
 }

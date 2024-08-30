@@ -37,8 +37,14 @@ const handleSubmit = (e) => {
             />
             <TextInput label="City" v-model="userData.city" />
             <TextInput label="State" v-model="userData.state" />
-            <TextInput label="Phone Number" v-model="userData.phone" />
-            <TextInput label="SSN" v-model="userData.ssn" />
+            <TextInput label="Zip" v-model="userData.zip" max-length="5" />
+            <TextInput label="Email" v-model="userData.email" />
+            <TextInput
+                label="Phone Number"
+                v-model="userData.phone"
+                format="phone"
+                max-length="12"
+            />
             <Button
                 text="Submit"
                 button-class="mt-6 bg-green-500"
