@@ -39,29 +39,45 @@ export function format(input) {
 
             return text
         },
-        date: function () {
+        date: function (showTime) {
             // This function should take a string like `2024-08-27T17:35:58.946Z`
             // and transform it to `08/27/2024 12:36 pm`
             // it should take a prop that determines whether or not
             // to show the time.
-            const options = {
-                month: '2-digit',
-                day: '2-digit',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true,
+            let options
+            if (showTime) {
+                options = {
+                    month: '2-digit',
+                    day: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true,
+                }
+            } else {
+                options = {
+                    month: '2-digit',
+                    day: '2-digit',
+                    year: 'numeric',
+                }
             }
+            const date = new Date(text)
 
-            text = new Intl.DateTimeFormat('en-US', options).format(text)
+            text = new Intl.DateTimeFormat('en-US', options).format(date)
 
+            return text
+        },
+        address: function () {
+            const { address_line_1, city, state, zip } = text
+            let result = `${address_line_1} ${city}, ${state} ${zip}`
+            text = result
             return text
         },
     }
 }
 
-export const handleFormat = (input, type) => {
+export const handleFormat = (input, type, showTime) => {
     const formatText = format(input)
     let result
     switch (type) {
@@ -69,10 +85,13 @@ export const handleFormat = (input, type) => {
             result = formatText.phone()
             break
         case 'date':
-            result = formatText.date()
+            result = formatText.date(showTime)
             break
         case 'ssn':
             result = formatText.ssn()
+            break
+        case 'address':
+            result = formatText.address()
             break
         default:
             return input
