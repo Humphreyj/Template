@@ -28,9 +28,13 @@ export function format(input) {
             // This function should take a string like `123333123`
             // and transform it to `123-33-1232`
             let cleaned = ('' + text).replace(/\D/g, '')
-            let match = cleaned.match(/^(\d{3})(\d{2})(\d{4})$/)
-            if (match) {
-                text = match[1] + '-' + match[2] + '-' + match[3]
+            if (cleaned.length > 3) {
+                text = cleaned.slice(0, 3) + '-' + cleaned.slice(3, 5)
+                if (cleaned.length > 5) {
+                    text += '-' + cleaned.slice(5, 9)
+                }
+            } else {
+                text = cleaned
             }
 
             return text
