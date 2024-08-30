@@ -25,7 +25,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <Card>
+    <Card container-class="md:w-1/2 lg:w-1/3">
         <section class="flex-col-ic-jc w-full">
             <div class="rounded-full size-20 bg-gray-400"></div>
             <TextBlock

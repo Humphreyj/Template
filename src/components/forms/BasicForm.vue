@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
 
 <template>
     <Card>
-        <section class="flex-col-ic-js w-full">
+        <section class="flex-col-ic-js gap-1 w-full">
             <h4 class="title-text my-2">{{ formTitle }}</h4>
             <TextInput label="User Name" v-model="userData.name" />
             <TextInput

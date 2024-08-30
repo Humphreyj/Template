@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <main class="flex-col-ic-jc w-screen">
+    <main class="flex-col-ic-jc">
         <slot name="top-content">
             <section class="w-11/12 mx-auto bg-gray-300"></section>
         </slot>

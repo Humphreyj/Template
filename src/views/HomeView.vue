@@ -23,7 +23,7 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
 <template>
     <PageLayout>
         <template #main-content>
-            <section class="mt-8 w-11/12 h-dvh flex-col-ic-js gap-5">
+            <section class="mt-8 w-11/12 lg:w-1/3 h-dvh flex-col-ic-js gap-5">
                 <Button @click="toggleEditing()" text="Toggle Edit" />
                 <BasicForm v-if="editingProfile" :data="sampleUser" />
                 <ProfileDetailsCard v-else :user="sampleUser" />
