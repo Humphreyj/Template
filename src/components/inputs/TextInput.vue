@@ -50,7 +50,6 @@ const handleInput = (e, type) => {
 }
 
 watch(inputValue, (newVal) => {
-    console.log('hey', handleFormat(newVal, props.format))
     inputValue.value = handleFormat(newVal, props.format)
     emit('update:modelValue', inputValue.value)
 })

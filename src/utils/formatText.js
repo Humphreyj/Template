@@ -11,10 +11,8 @@ export function format(input) {
             return text
         },
         phone: function () {
-            // Clean the input by removing all non-digit characters
-            var cleaned = ('' + text).replace(/\D/g, '')
+            let cleaned = ('' + text).replace(/\D/g, '')
 
-            // Check the length and add dashes accordingly
             if (cleaned.length > 3) {
                 text = cleaned.slice(0, 3) + '-' + cleaned.slice(3, 6)
                 if (cleaned.length > 6) {
