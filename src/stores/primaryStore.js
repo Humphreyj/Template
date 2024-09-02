@@ -1,7 +1,10 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { useToggle } from '@vueuse/core'
 
 export const usePrimaryStore = defineStore('primary', () => {
+    const showSidebar = ref(false)
+    const toggleSidebar = useToggle(showSidebar)
     const sampleUser = ref({
         name: 'Test Testman',
         address_line_1: '123 Test Drive',
@@ -13,9 +16,12 @@ export const usePrimaryStore = defineStore('primary', () => {
         created_at: '2024-08-30T18:14:55.119Z',
     })
 
-    const actions = {}
+    const actions = {
+        toggleSidebar,
+    }
     const values = {
         sampleUser,
+        showSidebar,
     }
     return { ...actions, ...values }
 })

@@ -1,42 +1,48 @@
 <script setup>
-import { onMounted } from 'vue'
+import { watch, onMounted } from 'vue'
 import { getStyles } from '@/composables/getStyles'
-import { useDark, useToggle } from '@vueuse/core'
-import { useRoute } from 'vue-router'
-
+import { useDark, useToggle, useWindowSize } from '@vueuse/core'
 // Components
 import Button from '@/components/UI/Button.vue'
-// Routing
-import { RouterLink } from 'vue-router'
+// Pinia
+import { storeToRefs } from 'pinia'
+import { usePrimaryStore } from '@/stores/primaryStore'
 const props = defineProps({
     textClass: {
         type: String,
         default: '',
     },
 })
-const route = useRoute()
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
-// const emit = defineEmits()
-const classes = getStyles(props, 'navLink')
+const { showSidebar } = storeToRefs(usePrimaryStore())
+const { toggleSidebar } = usePrimaryStore()
+const { width } = useWindowSize()
+
+watch(width, (newWidth) => {
+    if (newWidth > 768) {
+        showSidebar.value = true
+    } else {
+        showSidebar.value = false
+    }
+})
 
 onMounted(() => {
-    console.log(route)
+    if (width.value > 768) {
+        showSidebar.value = true
+    } else {
+        showSidebar.value = false
+    }
 })
 </script>
 
 <template>
-    <section class="flex-ic-jb w-full p-3 border-b border-gray-600 shadow-md">
-        <div>
-            <div class="size-10 rounded-full bg-blue-500"></div>
-        </div>
-        <div class="flex-ic-js gap-2">
-            <RouterLink to="/" :class="classes.textClass">Home</RouterLink>
-            <RouterLink to="/projects" :class="classes.textClass"
-                >Projects</RouterLink
-            >
-        </div>
-        <div>
+    <section class="flex-ic-jb p-2 border-b border-gray-600 shadow-md">
+        <h3 class="primary-text font-bold w-full md:hidden text-xl">
+            New Client
+        </h3>
+        <div class="flex-ic-jend w-full gap-1">
+            <Button v-if="width < 768" @click="toggleSidebar()" text="Bar" />
             <Button
                 @click="toggleDark()"
                 :text="isDark ? '&#9788;' : '&#9789;'"
