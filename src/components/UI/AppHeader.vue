@@ -1,5 +1,5 @@
 <script setup>
-import { watch } from 'vue'
+import { watch, onMounted } from 'vue'
 import { getStyles } from '@/composables/getStyles'
 import { useDark, useToggle, useWindowSize } from '@vueuse/core'
 // Components
@@ -19,7 +19,15 @@ const { showSidebar } = storeToRefs(usePrimaryStore())
 const { toggleSidebar } = usePrimaryStore()
 const { width } = useWindowSize()
 
-watch(width, () => {
+watch(width, (newWidth) => {
+    if (newWidth > 768) {
+        showSidebar.value = true
+    } else {
+        showSidebar.value = false
+    }
+})
+
+onMounted(() => {
     if (width.value > 768) {
         showSidebar.value = true
     } else {

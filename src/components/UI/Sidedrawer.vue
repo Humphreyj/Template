@@ -1,6 +1,8 @@
 <script setup>
+import { watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { RouterLink } from 'vue-router'
+import { useWindowSize } from '@vueuse/core'
 // Components
 // Pinia
 import { usePrimaryStore } from '@/stores/primaryStore'
@@ -12,10 +14,24 @@ const props = defineProps({
 })
 const { showSidebar } = storeToRefs(usePrimaryStore())
 const { toggleSidebar } = usePrimaryStore()
+const { width } = useWindowSize()
 
 // const emit = defineEmits()
 import { getStyles } from '@/composables/getStyles'
 const classes = getStyles(props, 'navLink')
+
+const handleNavigation = () => {
+    if (width.value < 768) {
+        toggleSidebar()
+    }
+}
+watch(width, (newWidth) => {
+    if (newWidth > 768) {
+        showSidebar.value = true
+    } else {
+        showSidebar.value = false
+    }
+})
 </script>
 
 <template>
@@ -37,13 +53,13 @@ const classes = getStyles(props, 'navLink')
                     <RouterLink
                         to="/"
                         :class="classes.textClass"
-                        @click="toggleSidebar()"
+                        @click="handleNavigation"
                         >Home</RouterLink
                     >
                     <RouterLink
                         to="/projects"
                         :class="classes.textClass"
-                        @click="toggleSidebar()"
+                        @click="handleNavigation"
                         >Projects</RouterLink
                     >
                 </div>
