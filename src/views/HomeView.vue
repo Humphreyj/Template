@@ -20,7 +20,7 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
 </script>
 
 <template>
-    <section class="w-full h-dvh flex-col-ic-js px-4">
+    <section class="w-full h-screen flex-col-ic-js px-4">
         <Button @click="toggleEditing()" text="Toggle Edit" />
         <BasicForm v-if="editingProfile" :data="sampleUser" />
         <ProfileDetailsCard v-else :user="sampleUser" />

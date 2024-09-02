@@ -6,7 +6,9 @@ import PageLayout from '@/components/UI/PageLayout.vue'
 </script>
 
 <template>
-    <div class="bg-slate-100 dark:bg-appBackground flex-is-js">
+    <div
+        class="bg-slate-100 dark:bg-appBackground flex-is-js h-screen overflow-y-hidden"
+    >
         <Sidedrawer />
         <section class="w-full">
             <AppHeader />
