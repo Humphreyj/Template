@@ -14,7 +14,7 @@ const props = defineProps({
             city: '',
             state: '',
             phone: '',
-            ssn: '',
+            email: '',
         },
     },
 })
@@ -25,15 +25,20 @@ onMounted(() => {
 </script>
 
 <template>
-    <Card container-class="md:w-1/2 lg:w-1/3">
+    <Card container-class="w-full">
         <section class="flex-col-ic-jc w-full">
             <div class="rounded-full size-20 bg-gray-400"></div>
             <TextBlock
                 :text-content="user.name"
                 content-class="text-2xl my-2"
             />
-            <TextBlock label="Address" :text-content="address" />
+            <TextBlock
+                label="Address"
+                :text-content="address"
+                content-class=""
+            />
 
+            <TextBlock label="Email" :text-content="user.email" />
             <TextBlock label="Phone Number" :text-content="user.phone" />
             <TextBlock
                 label="Created"
