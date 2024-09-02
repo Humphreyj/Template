@@ -17,10 +17,9 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 const { showSidebar } = storeToRefs(usePrimaryStore())
 const { toggleSidebar } = usePrimaryStore()
-const { width, height } = useWindowSize()
+const { width } = useWindowSize()
 
 watch(width, () => {
-    console.log(width.value)
     if (width.value > 768) {
         showSidebar.value = true
     } else {
