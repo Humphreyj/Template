@@ -1,5 +1,4 @@
 <script setup>
-import { watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { RouterLink } from 'vue-router'
 import { useWindowSize } from '@vueuse/core'
@@ -25,13 +24,6 @@ const handleNavigation = () => {
         toggleSidebar()
     }
 }
-watch(width, (newWidth) => {
-    if (newWidth > 768) {
-        showSidebar.value = true
-    } else {
-        showSidebar.value = false
-    }
-})
 </script>
 
 <template>
