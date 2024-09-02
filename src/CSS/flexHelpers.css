@@ -9,6 +9,9 @@
     .flex-ic-jc {
         @apply flex items-center justify-center;
     }
+    .flex-is-js {
+        @apply flex items-start justify-start;
+    }
     .flex-ic-jb {
         @apply flex items-center justify-between;
     }
@@ -23,8 +26,5 @@
     }
     .flex-col-ic-jc {
         @apply flex flex-col items-center justify-center;
-    }
-    .flex-col-ic-js {
-        @apply flex flex-col items-center justify-start;
     }
 }

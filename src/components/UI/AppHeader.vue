@@ -26,10 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="flex-ic-jb w-full p-3 border-b border-gray-600 shadow-md">
-        <div>
-            <div class="size-10 rounded-full bg-blue-500"></div>
-        </div>
+    <section class="flex-ic-jb px-3 border-b border-gray-600 shadow-md">
         <div class="flex-ic-js gap-2">
             <RouterLink to="/" :class="classes.textClass">Home</RouterLink>
             <RouterLink to="/projects" :class="classes.textClass"
