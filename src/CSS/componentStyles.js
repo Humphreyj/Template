@@ -1,7 +1,7 @@
 export const componentStyles = {
     cardStyles: {
         containerClass:
-            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-cardBackgroundDark',
+            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-cardBackgroundDark dark:border-gray-600',
         cardTitleText: 'w-fit text-2xl dark:text-white',
         cardContentText: '',
     },
