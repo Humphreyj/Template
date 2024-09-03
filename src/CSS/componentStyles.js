@@ -22,6 +22,10 @@ export const componentStyles = {
             'absolute w-screen h-screen md:hidden z-[5] bg-black opacity-45',
         containerClass:
             'w-max min-w-40 h-screen absolute md:relative bg-white dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r',
+        titleClass: 'primary-text font-bold font-display text-xl mb-4',
+        navContainerClass: 'flex-col-is-js gap-2',
+        navLinkClass:
+            'text-lg text-gray-700 dark:text-gray-200 font-content min-w-32 p-1 rounded-md hover:bg-gray-200 hover:dark:bg-gray-500 hover:bg-opacity-70',
     },
     textInput: {
         containerClass: 'flex-col-is-js w-full ',

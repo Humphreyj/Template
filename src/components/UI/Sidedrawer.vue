@@ -6,8 +6,30 @@ import { useWindowSize } from '@vueuse/core'
 
 // Pinia
 import { usePrimaryStore } from '@/stores/primaryStore'
+// Utils
+import { getStyles } from '@/composables/getStyles'
 const props = defineProps({
     textClass: {
+        type: String,
+        default: '',
+    },
+    backdropClass: {
+        type: String,
+        default: '',
+    },
+    containerClass: {
+        type: String,
+        default: '',
+    },
+    titleClass: {
+        type: String,
+        default: '',
+    },
+    navContainerClass: {
+        type: String,
+        default: '',
+    },
+    navLinkClass: {
         type: String,
         default: '',
     },
@@ -17,14 +39,14 @@ const { toggleSidebar } = usePrimaryStore()
 const { width } = useWindowSize()
 
 // const emit = defineEmits()
-import { getStyles } from '@/composables/getStyles'
-const classes = getStyles(props, 'navLink')
 
 const handleNavigation = () => {
     if (width.value < 768) {
         toggleSidebar()
     }
 }
+
+const classes = getStyles(props, 'sidebar')
 </script>
 
 <template>
@@ -33,27 +55,22 @@ const handleNavigation = () => {
             <div
                 v-if="showSidebar"
                 id="backdrop"
-                class="absolute w-screen h-screen md:hidden z-[5] bg-black opacity-45"
+                :class="classes.backdropClass"
                 @click="toggleSidebar()"
             ></div>
 
-            <section
-                v-if="showSidebar"
-                class="w-max min-w-40 h-screen absolute md:relative bg-white dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r"
-            >
-                <h3 class="primary-text font-bold font-display text-xl mb-4">
-                    New Client
-                </h3>
-                <div class="flex-col-is-js gap-2">
+            <section v-if="showSidebar" :class="classes.containerClass">
+                <h3 :class="classes.titleClass">New Client</h3>
+                <div :class="classes.navContainerClass">
                     <RouterLink
                         to="/"
-                        :class="classes.textClass"
+                        :class="classes.navLinkClass"
                         @click="handleNavigation"
                         >Home</RouterLink
                     >
                     <RouterLink
                         to="/projects"
-                        :class="classes.textClass"
+                        :class="classes.navLinkClass"
                         @click="handleNavigation"
                         >Projects</RouterLink
                     >
