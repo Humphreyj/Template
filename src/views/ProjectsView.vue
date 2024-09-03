@@ -1,12 +1,10 @@
 <script setup>
 // Components
-import PageLayout from '@/components/UI/PageLayout.vue'
 import Card from '@/components/UI/Card.vue'
 import TeamList from '@/components/UI/TeamList.vue'
 // const props = defineProps({})
 // const emit = defineEmits()
 
-const text = 'poggers'
 </script>
 
 <template>
