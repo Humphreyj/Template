@@ -7,7 +7,7 @@ export const componentStyles = {
     },
     navLink: {
         textClass:
-            'text-lg text-gray-700 dark:text-gray-200 font-content min-w-32 p-1 rounded-md',
+            'text-lg text-gray-700 dark:text-gray-200 font-content min-w-32 p-1 rounded-md hover:bg-gray-200 hover:dark:bg-gray-500 hover:bg-opacity-70',
     },
     buttons: {
         defaultButton:
@@ -16,6 +16,12 @@ export const componentStyles = {
             'border border-gray-700 rounded-lg bg-red-500 text-white py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
         disabledButton:
             'border border-gray-700 rounded-lg bg-gray-200 text-gray-500 py-1 px-2 shadow drop-shadow opacity-75 disabled cursor-not-allowed',
+    },
+    sidebar: {
+        backdropClass:
+            'absolute w-screen h-screen md:hidden z-[5] bg-black opacity-45',
+        containerClass:
+            'w-max min-w-40 h-screen absolute md:relative bg-white dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r',
     },
     textInput: {
         containerClass: 'flex-col-is-js w-full ',

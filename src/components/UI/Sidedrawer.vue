@@ -39,7 +39,7 @@ const handleNavigation = () => {
 
             <section
                 v-if="showSidebar"
-                class="w-max h-screen absolute md:relative bg-white dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r"
+                class="w-max min-w-40 h-screen absolute md:relative bg-white dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r"
             >
                 <h3 class="primary-text font-bold font-display text-xl mb-4">
                     New Client
