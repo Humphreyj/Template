@@ -11,6 +11,10 @@ export default {
                 primaryTextDark: '#edf0f4',
                 secondaryText: '#9399A1',
             },
+            fontFamily: {
+                display: ['Inter', 'sans-serif'],
+                content: ['Raleway', 'serif'],
+            },
         },
     },
     darkMode: ['class'],
