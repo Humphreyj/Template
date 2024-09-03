@@ -4,11 +4,19 @@
 const props = defineProps({
     avatarImg: {
         type: String,
-        default: 'https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo',
+        default: '',
     },
     avatarClass: {
         type: String,
-        default: 'rounded-full mr-2'
+        default: 'rounded-full mr-2 w-20 bg-white'
+    }, 
+    avatarAlt: {
+        type: String,
+        default: 'profile picture'
+    },
+    userName: {
+        type: String,
+        default: ''
     }
 })
 
@@ -17,12 +25,15 @@ const props = defineProps({
 
 <template>
     <section class="m-2">
-        <img 
+        <img v-if="avatarImg"
             :src="avatarImg" 
-            alt="profile picture"
-            width="50"
-            height="50"
+            :alt="avatarAlt"
             :class="avatarClass"
         >
+        <h2 v-else
+         :class="avatarClass + ' text-black p-3 w-10/12'"
+        >
+        NU
+        </h2>
     </section>
 </template>

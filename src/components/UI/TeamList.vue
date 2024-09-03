@@ -11,7 +11,8 @@ const title = 'Team List'
 const team = [
     {
         name: 'Dill',
-        title: 'Dumbass'
+        title: 'Dumbass',
+        img: "https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo"
     },
     {
         name: 'Pickle',
@@ -19,7 +20,9 @@ const team = [
     },
     {
         name: 'Brandy',
-        title: 'Goblin'
+        title: 'Goblin',
+        img: "https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo"
+
     },
     
 ]
@@ -34,7 +37,10 @@ const team = [
                     content-class="text-2xl font-bold text-left"
                 />
                 <section class="flex flex-row items-center h-20" v-for="member in team">
-                    <Avatar />
+                    <Avatar 
+                        :username="member.name"
+                        :avatarImg="member.img"
+                    />
                     <TextBlock
                         :label="member.name"
                         :text-content="member.title"
