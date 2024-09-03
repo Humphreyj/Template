@@ -6,7 +6,8 @@ export const componentStyles = {
         cardContentText: '',
     },
     navLink: {
-        textClass: 'text-lg text-gray-700 dark:text-gray-200',
+        textClass:
+            'text-lg text-gray-700 dark:text-gray-200 font-content min-w-32 p-1 rounded-md',
     },
     buttons: {
         defaultButton:

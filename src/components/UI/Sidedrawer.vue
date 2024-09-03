@@ -3,6 +3,7 @@ import { storeToRefs } from 'pinia'
 import { RouterLink } from 'vue-router'
 import { useWindowSize } from '@vueuse/core'
 // Components
+
 // Pinia
 import { usePrimaryStore } from '@/stores/primaryStore'
 const props = defineProps({
@@ -40,7 +41,9 @@ const handleNavigation = () => {
                 v-if="showSidebar"
                 class="w-max h-screen absolute md:relative bg-white dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r"
             >
-                <h3 class="primary-text font-bold text-xl mb-4">New Client</h3>
+                <h3 class="primary-text font-bold font-display text-xl mb-4">
+                    New Client
+                </h3>
                 <div class="flex-col-is-js gap-2">
                     <RouterLink
                         to="/"
