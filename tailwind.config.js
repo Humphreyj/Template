@@ -4,12 +4,25 @@ export default {
     theme: {
         extend: {
             colors: {
-                appBackground: '#272d35',
-                sidebarBackgroundDark: '#384049',
+                appBackground: '#FFFAFC',
+                appBackgroundDark: '#272d35',
+                sidebarBackground: '#b8d4fc',
+                sidebarBackgroundDark: '#0f172a',
                 cardBackgroundDark: '#0e1f38',
-                primaryText: '#161b23',
+                primaryText: '#2c3649',
                 primaryTextDark: '#edf0f4',
                 secondaryText: '#9399A1',
+                primary: {
+                    100: '#a9c3ea',
+                    200: '#93b5e5',
+                    300: '#7ba7e0',
+                    400: '#428bd5',
+                    500: '#077ad9',
+                },
+                secondary: {
+                    100: '#9197af',
+                    400: '#27344c',
+                },
             },
             fontFamily: {
                 display: ['Inter', 'sans-serif'],

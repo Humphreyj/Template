@@ -4,7 +4,7 @@
 
 @layer components {
     .primary-text {
-        @apply text-primaryText dark:text-primaryTextDark;
+        @apply text-primaryText dark:text-primaryTextDark font-display;
     }
     .title-text {
         @apply primary-text text-2xl font-bold;
