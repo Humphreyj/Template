@@ -39,7 +39,7 @@ const team = [
                 <section class="flex flex-row items-center h-20" v-for="member in team">
                     <Avatar 
                         :username="member.name"
-                        :avatarImg="member.img"
+                        :avatar-img="member.img"
                     />
                     <TextBlock
                         :label="member.name"

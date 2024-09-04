@@ -2,8 +2,10 @@
 // Components
 import Card from '@/components/UI/Card.vue'
 import TeamList from '@/components/UI/TeamList.vue'
+import Chart from '@/components/UI/Chart.vue'
 // const props = defineProps({})
 // const emit = defineEmits()
+
 
 </script>
 
@@ -15,5 +17,6 @@ import TeamList from '@/components/UI/TeamList.vue'
             </template>
         </Card>
         <TeamList />
+        <Chart />
     </section>
 </template>

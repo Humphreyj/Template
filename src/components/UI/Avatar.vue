@@ -36,4 +36,4 @@ const props = defineProps({
         NU
         </h2>
     </section>
-</template>
+</template> 
