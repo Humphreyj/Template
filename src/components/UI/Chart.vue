@@ -16,39 +16,25 @@ const props = defineProps({
     chartType: {
         type: String,
         default: 'bar'
+    },
+    chartOptions: {
+        type: Object,
+        default: {}
+    },
+    chartSeries: {
+        type: Object,
+        default: {}
     }
 })
 
-const chartOptions= {
-    chart: {
-        id: props.chartType
-    },
-    xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
-        labels: {
-            style: {
-                colors: '#ffffff',
-                fontSize: ''
-            }
-        }
-    },
-    dataLabels: {
-        style: {
-            colors: ['#ffffff']
-        }
-    }
-}
-const series = [{
-    name: 'series-1',
-    data: [30, 40, 45, 50, 49, 60, 70, 91]
-}]
+
 
 </script>
 
 <template>
     <section class="w-100">
         <Card>
-            <apexchart width="250" :type="chartType" :options="chartOptions" :series="series"></apexchart>
+            <apexchart width="280" :type="chartType" :options="chartOptions" :series="chartSeries"></apexchart>
         </Card>
     </section>
 </template>

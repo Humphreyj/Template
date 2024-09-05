@@ -5,8 +5,10 @@ import TeamList from '@/components/UI/TeamList.vue'
 import Chart from '@/components/UI/Chart.vue'
 // const props = defineProps({})
 // const emit = defineEmits()
-
-
+import { barChartOptions } from '@/utils/barGraph.js';
+import { barSeries } from '@/utils/barGraph.js';
+import { pieChartOptions } from '@/utils/pieGraph.js';
+import { pieSeries } from '@/utils/pieGraph.js';
 </script>
 
 <template>
@@ -17,6 +19,15 @@ import Chart from '@/components/UI/Chart.vue'
             </template>
         </Card>
         <TeamList />
-        <Chart />
+        <Chart 
+            chart-type="bar"
+            :chart-options="barChartOptions"
+            :chart-series="barSeries"
+        />
+        <Chart 
+            chart-type="pie"
+            :chart-options="pieChartOptions"
+            :chart-series="pieSeries.data"
+        />
     </section>
 </template>
