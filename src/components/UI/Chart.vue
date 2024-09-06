@@ -34,7 +34,12 @@ const props = defineProps({
 <template>
     <section class="w-100">
         <Card>
-            <apexchart width="280" :type="chartType" :options="chartOptions" :series="chartSeries"></apexchart>
+            <apexchart width="280" 
+                :type="chartType" 
+                :options="chartOptions" 
+                :series="chartSeries"
+            >
+            </apexchart>
         </Card>
     </section>
 </template>

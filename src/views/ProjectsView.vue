@@ -12,10 +12,10 @@ import { pieSeries } from '@/utils/pieGraph.js';
 </script>
 
 <template>
-    <section class="w-full h-screen flex-col-ic-js px-4">
+    <section class="w-full h-screen px-4 flex-col-ic-js">
         <Card>
             <template #card-content>
-                <h4 class="w-fit text-2xl">This is the projects view.</h4>
+                <h4 class="text-2xl w-fit">This is the projects view.</h4>
             </template>
         </Card>
         <TeamList />
