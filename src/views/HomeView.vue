@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useToggle } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 // Components
+import MetricCard from '@/components/cards/MetricCard.vue'
 import Card from '@/components/UI/Card.vue'
 
 // Pinia
@@ -17,29 +18,15 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
 
 <template>
     <section
-        class="w-full max-w-[75rem] mx-auto px-4 primary-text font-display flex-col-ic-js"
+        class="w-full max-w-[75rem] mx-auto primary-text px-2 font-display flex-col-ic-js"
     >
-        <section
-            class="grid w-full grid-flow-row-dense grid-cols-2 gap-2 mt-8 md:grid-cols-3"
-        >
-            <Card>
-                <section class="flex-col-ic-js">
-                    <h6 class="text-lg">Open Issues</h6>
-                    <p class="text-3xl">44</p>
-                </section>
-            </Card>
-            <Card>
-                <section class="flex-col-ic-js">
-                    <h6 class="text-lg">In Progress</h6>
-                    <p class="text-3xl">16</p>
-                </section>
-            </Card>
-            <Card container-class="">
-                <section class="flex-col-ic-js">
-                    <h6 class="text-lg">Resolved</h6>
-                    <p class="text-3xl">22</p>
-                </section>
-            </Card>
+        <section class="w-full gap-2 mt-8 flex-ic-je">
+            <MetricCard />
+            <MetricCard
+                metric-title="Revenue"
+                :metric-value="12078"
+                metric-type="currency"
+            />
         </section>
     </section>
 </template>
