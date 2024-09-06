@@ -9,7 +9,7 @@ const props = defineProps({
     },
     cardTitleText: {
         type: String,
-        default: '',
+        default: 'Card Content',
     },
 })
 
@@ -20,7 +20,7 @@ const classes = ref(getStyles(props, 'cardStyles'))
     <div :class="classes.containerClass">
         <div class="w-full">
             <slot>
-                <h4 :class="classes.cardTitleText">Card Content</h4>
+                <h4 :class="classes.cardTitleText">{{ cardTitleText }}</h4>
             </slot>
         </div>
     </div>

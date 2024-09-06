@@ -29,7 +29,7 @@ const team = [
 
 </script>
 <template>
-    <section class="mt-8 w-100 h-dvh">
+    <section class="mt-8 mb-2 w-100">
         <Card>
             <section class="flex-col w-100 text-left">
                 <TextBlock 
@@ -39,7 +39,7 @@ const team = [
                 <section class="flex flex-row items-center h-20" v-for="member in team">
                     <Avatar 
                         :username="member.name"
-                        :avatarImg="member.img"
+                        :avatar-img="member.img"
                     />
                     <TextBlock
                         :label="member.name"
