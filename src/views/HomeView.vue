@@ -19,31 +19,27 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
     <section
         class="w-full max-w-[75rem] mx-auto px-4 primary-text font-display flex-col-ic-js"
     >
-        <section class="w-full gap-2 flex-ic-je mt-8">
+        <section
+            class="grid w-full grid-flow-row-dense grid-cols-2 gap-2 mt-8 md:grid-cols-3"
+        >
             <Card>
                 <section class="flex-col-ic-js">
-                    <h6 class="text-lg">Ammunition</h6>
-                    <p class="text-3xl">54%</p>
+                    <h6 class="text-lg">Open Issues</h6>
+                    <p class="text-3xl">44</p>
                 </section>
             </Card>
             <Card>
                 <section class="flex-col-ic-js">
-                    <h6 class="text-lg">Shields</h6>
-                    <p class="text-3xl">80%</p>
+                    <h6 class="text-lg">In Progress</h6>
+                    <p class="text-3xl">16</p>
                 </section>
             </Card>
-            <Card>
+            <Card container-class="">
                 <section class="flex-col-ic-js">
-                    <h6 class="text-lg">Fuel</h6>
-                    <p class="text-3xl">44%</p>
+                    <h6 class="text-lg">Resolved</h6>
+                    <p class="text-3xl">22</p>
                 </section>
             </Card>
         </section>
-        <Card container-class="w-full mt-2">
-            <section class="flex-col-ic-js">
-                <h6 class="text-lg">Snacks</h6>
-                <p class="text-3xl">4</p>
-            </section>
-        </Card>
     </section>
 </template>
