@@ -23,18 +23,22 @@ const props = defineProps({
 </script>
 
 <template>
-    <Card container-class="w-full drop-shadow-md hover:drop-shadow-xl">
-        <section class="gap-2 px-2 py-4 min-h-32 min-w-40 flex-col-is-js">
+    <Card
+        container-class="w-full cursor-pointer drop-shadow-md hover:drop-shadow-lg"
+    >
+        <section class="gap-2 py-4 pl-2 pr-1 min-h-32 min-w-40 flex-col-is-js">
             <div class="w-full flex-ic-jb">
-                <h6 class="text-lg">{{ metricTitle }}</h6>
+                <h6 class="text-lg font-semibold font-display drop-shadow-sm">
+                    {{ metricTitle }}
+                </h6>
                 <slot name="icon">
                     <Cog6ToothIcon class="-mt-1 cursor-pointer size-6" />
                 </slot>
             </div>
-            <p class="my-1 text-3xl">
+            <p class="mb-1 text-3xl font-bold font-content">
                 {{ handleFormat(metricValue, metricType) }}
             </p>
-            <div class="p-1 text-sm text-white rounded-xl bg-primary-400">
+            <div class="p-1 text-xs text-white rounded-xl bg-primary-400">
                 Status
             </div>
         </section>

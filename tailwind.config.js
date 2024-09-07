@@ -26,7 +26,7 @@ export default {
             },
             fontFamily: {
                 display: ['Inter', 'sans-serif'],
-                content: ['Raleway', 'serif'],
+                content: ['Nunito Sans', 'serif'],
             },
         },
     },

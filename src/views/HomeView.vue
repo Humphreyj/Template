@@ -40,21 +40,11 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
                 :metric-value="1245"
                 metric-type="number"
             />
-            <MetricCard />
-            <Card container-class="col-span-2 ">
-                <Chart
-                    chart-type="pie"
-                    :chart-options="pieChartOptions"
-                    :chart-series="pieSeries.data"
-                />
-            </Card>
-            <Card container-class="col-span-2">
-                <Chart
-                    chart-type="bar"
-                    :chart-options="barChartOptions"
-                    :chart-series="barSeries"
-                />
-            </Card>
+            <MetricCard
+                metric-title="New Accounts"
+                :metric-value="53"
+                metric-type="number"
+            />
         </section>
     </section>
 </template>
