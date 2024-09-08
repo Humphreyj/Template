@@ -36,4 +36,13 @@ export const componentStyles = {
             'font-bold primary-text dark:opacity-95 text-center dark:text-white',
         contentClass: 'font-semibold dark:text-white',
     },
+
+    metricCard: {
+        cardContainerClass:
+            'w-full cursor-pointer drop-shadow-md hover:drop-shadow-lg',
+        contentContainerClass:
+            'gap-2 py-4 pl-2 pr-1 min-h-32 min-w-40 flex-col-is-js',
+        cardTitleClass: 'text-lg font-semibold font-display drop-shadow-sm',
+        cardContentClass: 'mb-1 text-3xl font-bold font-content',
+    },
 }

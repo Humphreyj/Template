@@ -1,9 +1,11 @@
 <script setup>
+import { ref } from 'vue'
 // Components
 import Card from '@/components/UI/Card.vue'
 // Icons
 import { Cog6ToothIcon } from '@heroicons/vue/24/outline'
 // Utils
+import { getStyles } from '@/composables/getStyles'
 import { handleFormat } from '@/utils/formatText'
 const props = defineProps({
     metricTitle: {
@@ -18,24 +20,39 @@ const props = defineProps({
         type: String,
         default: 'text',
     },
+    cardContainerClass: {
+        type: String,
+        default: '',
+    },
+    contentContainerClass: {
+        type: String,
+        default: '',
+    },
+    cardTitleClass: {
+        type: String,
+        default: '',
+    },
+    cardContentClass: {
+        type: String,
+        default: '',
+    },
 })
 // const emit = defineEmits()
+const classes = ref(getStyles(props, 'metricCard'))
 </script>
 
 <template>
-    <Card
-        container-class="w-full cursor-pointer drop-shadow-md hover:drop-shadow-lg"
-    >
-        <section class="gap-2 py-4 pl-2 pr-1 min-h-32 min-w-40 flex-col-is-js">
+    <Card :container-class="classes.cardContainerClass">
+        <section :class="classes.contentContainerClass">
             <div class="w-full flex-ic-jb">
-                <h6 class="text-lg font-semibold font-display drop-shadow-sm">
+                <h6 :class="classes.cardTitleClass">
                     {{ metricTitle }}
                 </h6>
                 <slot name="icon">
                     <Cog6ToothIcon class="-mt-1 cursor-pointer size-6" />
                 </slot>
             </div>
-            <p class="mb-1 text-3xl font-bold font-content">
+            <p :class="classes.cardContentClass">
                 {{ handleFormat(metricValue, metricType) }}
             </p>
             <div class="p-1 text-xs text-white rounded-xl bg-primary-400">
