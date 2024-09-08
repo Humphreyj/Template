@@ -15,28 +15,26 @@ const props = defineProps({
     },
     chartType: {
         type: String,
-        default: 'bar'
+        default: 'bar',
     },
     chartOptions: {
         type: Object,
-        default: {}
+        default: {},
     },
     chartSeries: {
         type: Object,
-        default: {}
-    }
+        default: {},
+    },
 })
-
-
-
 </script>
 
 <template>
     <section class="w-100">
         <Card>
-            <apexchart width="280" 
-                :type="chartType" 
-                :options="chartOptions" 
+            <apexchart
+                width="280"
+                :type="chartType"
+                :options="chartOptions"
                 :series="chartSeries"
             >
             </apexchart>

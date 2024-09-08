@@ -74,6 +74,17 @@ export function format(input) {
             text = result
             return text
         },
+        number: function () {
+            text = new Intl.NumberFormat('en-US').format(text)
+            return text
+        },
+        currency: function () {
+            text = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            }).format(text)
+            return text
+        },
     }
 }
 
@@ -92,6 +103,12 @@ export const handleFormat = (input, type, showTime) => {
             break
         case 'address':
             result = formatText.address()
+            break
+        case 'number':
+            result = formatText.number()
+            break
+        case 'currency':
+            result = formatText.currency()
             break
         default:
             return input
