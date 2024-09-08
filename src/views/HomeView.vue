@@ -46,5 +46,20 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
                 metric-type="number"
             />
         </section>
+        <Card container-class="mt-2">
+            <section>
+                <header class="px-2 border-b flex-ic-js h-14">
+                    <h4 class="text-xl font-semibold font-display">
+                        Recent Activity
+                    </h4>
+                </header>
+                <div class="w-full gap-2 py-2 my-1 flex-col-ic-js">
+                    <div
+                        v-for="i in 5"
+                        class="bg-gray-200 h-14 w-[98%] rounded-md mx-auto flex-ic-js dark:bg-slate-700"
+                    ></div>
+                </div>
+            </section>
+        </Card>
     </section>
 </template>
