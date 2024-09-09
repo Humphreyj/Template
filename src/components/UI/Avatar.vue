@@ -8,7 +8,7 @@ const props = defineProps({
     },
     avatarClass: {
         type: String,
-        default: 'rounded-full mr-2 w-20 bg-white'
+        default: 'rounded-full mr-2 bg-white w-20'
     }, 
     avatarAlt: {
         type: String,
@@ -24,16 +24,16 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="m-2">
+    <section class="mr-2 text-center text-black ">
         <img v-if="avatarImg"
             :src="avatarImg" 
             :alt="avatarAlt"
             :class="avatarClass"
         >
         <h2 v-else
-         :class="avatarClass + ' text-black p-3 w-10/12'"
+         :class="avatarClass + ' text-black text-center w-14'"
         >
         NU
         </h2>
     </section>
-</template> 
+</template>
