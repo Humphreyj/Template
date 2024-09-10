@@ -30,7 +30,7 @@ const props = defineProps({
     <section class="w-100">
         <Card>
             <apexchart
-                width="280"
+                class="w-full h-72 flex-col-ic-jc"
                 :type="chartType"
                 :options="chartOptions"
                 :series="chartSeries"
