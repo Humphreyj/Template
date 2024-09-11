@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-import { getStyles } from '@/composables/getStyles'
 
 // Components
 import Card from '@/components/UI/Card.vue'
@@ -32,7 +30,7 @@ const props = defineProps({
     <section class="w-100">
         <Card>
             <apexchart
-                width="280"
+                class="w-full h-72 flex-col-ic-jc"
                 :type="chartType"
                 :options="chartOptions"
                 :series="chartSeries"
@@ -41,3 +39,11 @@ const props = defineProps({
         </Card>
     </section>
 </template>
+<style scoped>
+.apexcharts-datalabel {
+    transform: translateY(
+      -15px
+    ) !important; /* Adjusts the vertical position of data labels */
+    white-space: nowrap;
+}
+</style>

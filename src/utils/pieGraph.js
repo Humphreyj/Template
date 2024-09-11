@@ -52,16 +52,23 @@ export const pieChartOptions = {
     
     chart: {
         width: 400,
+        
         type: 'pie',
-        id: 'pieChart'
+        id: 'pieChart',
     },
+    plotOptions: {
+        pie: {
+          dataLabels: {
+            offset: -10,
+          }, 
+        }
+      },
     labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
     
     dataLabels: {
-        offsetY: '10px',
-        offsetX: 400,
-        textAnchor: 'middle',
+       
     },
+    
     title: {
         text: 'Pie Chart',
         style: {

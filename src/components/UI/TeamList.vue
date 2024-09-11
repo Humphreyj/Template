@@ -4,8 +4,10 @@ import Card from '@/components/UI/Card.vue'
 import TextBlock from '@/components/UI/TextBlock.vue'
 import Button from '@/components/UI/Button.vue'
 import Avatar from '@/components/UI/Avatar.vue'
-// const props = defineProps({})
-// const emit = defineEmits()
+// Icons
+import { Cog6ToothIcon } from '@heroicons/vue/24/outline'
+
+
 
 const title = 'Team List'
 const team = [
@@ -16,7 +18,8 @@ const team = [
     },
     {
         name: 'Pickle',
-        title: 'Trash Annihalator'
+        title: 'Trash Annihalator',
+        img: "https://www.gravatar.com/avatar/3b3be63a4c2a439b013787725dfce802?d=identicon"
     },
     {
         name: 'Brandy',
@@ -29,9 +32,9 @@ const team = [
 
 </script>
 <template>
-    <section class="mt-8 mb-2 w-100">
+    <section class="w-100">
         <Card>
-            <section class="flex-col w-100 text-left">
+            <section class="flex-col m-2 text-left w-100">
                 <TextBlock 
                     :text-content="title" 
                     content-class="text-2xl font-bold text-left"
@@ -44,10 +47,10 @@ const team = [
                     <TextBlock
                         :label="member.name"
                         :text-content="member.title"
-                        label-class="font-bold text-black-600 opacity-1 text-left"
+                        label-class="font-bold text-left text-black-600 opacity-1"
                         content-class="text-xs"
                     />
-                    <div class="flex flex-row w-4/5 justify-end">
+                    <div class="flex flex-row justify-end w-4/5">
                         
                         <Button 
                             text="&#x2709"
