@@ -3,12 +3,14 @@
 import Card from '@/components/UI/Card.vue'
 import TeamList from '@/components/UI/TeamList.vue'
 import Chart from '@/components/UI/Chart.vue'
-// const props = defineProps({})
-// const emit = defineEmits()
+
+// Charts/Graphs
 import { barChartOptions } from '@/utils/barGraph.js';
 import { barSeries } from '@/utils/barGraph.js';
 import { pieChartOptions } from '@/utils/pieGraph.js';
 import { pieSeries } from '@/utils/pieGraph.js';
+import { progressGraphOptions } from '@/utils/progressGraph.js';
+import { progressSeries } from '@/utils/progressGraph.js'
 </script>
 
 <template>
@@ -26,6 +28,11 @@ import { pieSeries } from '@/utils/pieGraph.js';
                 chart-type="pie"
                 :chart-options="pieChartOptions"
                 :chart-series="pieSeries.data"
+            />
+            <Chart 
+                chart-type="radialBar"
+                :chart-options="progressGraphOptions"
+                :chart-series="progressSeries"
             />
         </section>
     </section>

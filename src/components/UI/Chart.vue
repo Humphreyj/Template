@@ -39,11 +39,4 @@ const props = defineProps({
         </Card>
     </section>
 </template>
-<style scoped>
-.apexcharts-datalabel {
-    transform: translateY(
-      -15px
-    ) !important; /* Adjusts the vertical position of data labels */
-    white-space: nowrap;
-}
-</style>
+
