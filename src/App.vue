@@ -7,10 +7,10 @@ import PageLayout from '@/components/UI/PageLayout.vue'
 
 <template>
     <div
-        class="h-screen overflow-y-auto bg-appBackground dark:bg-appBackgroundDark flex-is-js"
+        class="pb-6 overflow-y-auto h-dvh bg-appBackground dark:bg-appBackgroundDark flex-is-js"
     >
         <Sidedrawer />
-        <section class="w-full">
+        <section class="w-full overflow-y-scroll">
             <AppHeader />
             <RouterView v-slot="{ Component, route }">
                 <!-- Use a custom transition or fallback to `fade` -->
