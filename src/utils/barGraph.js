@@ -112,3 +112,12 @@ export const barSeries = [
         data: [30, 40, 45, 50, 49, 60, 70, 91],
     },
 ]
+export const barMethods = {
+    
+    update: function () {
+        let newSeries = [{
+            data: [80, 95, 20, 10, 42, 65, 19, 91]
+        }]
+        ApexCharts.exec('barChart', 'updateSeries', newSeries, true)
+    }
+}

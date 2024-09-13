@@ -11,6 +11,9 @@ import { pieChartOptions } from '@/utils/pieGraph.js';
 import { pieSeries } from '@/utils/pieGraph.js';
 import { progressGraphOptions } from '@/utils/progressGraph.js';
 import { progressSeries } from '@/utils/progressGraph.js'
+import { progressMethods } from '@/utils/progressGraph.js'
+import { barMethods } from '@/utils/barGraph.js'
+import { pieMethods } from '@/utils/pieGraph.js'
 </script>
 
 <template>
@@ -34,6 +37,11 @@ import { progressSeries } from '@/utils/progressGraph.js'
                 :chart-options="progressGraphOptions"
                 :chart-series="progressSeries"
             />
+            <button @click="progressMethods.update">Update Progress Bar</button>
+            <button @click="barMethods.update">Update Bar Chart</button>
+            <button @click="pieMethods.update">Update pie Chart</button>
+
+
         </section>
     </section>
 </template>
