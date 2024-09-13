@@ -9,7 +9,7 @@ export const usePrimaryStore = defineStore('primary', () => {
         name: 'Test Testman',
         address_line_1: '123 Test Drive',
         city: 'Testville',
-        state: 'Tx',
+        state: 'tx',
         zip: '44343',
         email: 'testman@bestman.com',
         phone: '232-232-3333',

@@ -6,6 +6,7 @@ import { storeToRefs } from 'pinia'
 import MetricCard from '@/components/cards/MetricCard.vue'
 import Card from '@/components/UI/Card.vue'
 import Chart from '@/components/UI/Chart.vue'
+import BasicForm from '../components/forms/BasicForm.vue'
 // Pinia
 import { usePrimaryStore } from '../stores/primaryStore'
 // Utils
@@ -60,6 +61,7 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
                     ></div>
                 </div>
             </section>
+            <BasicForm class="w-1/2" :data="sampleUser" />
         </Card>
     </section>
 </template>
