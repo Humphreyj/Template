@@ -12,6 +12,9 @@
     .flex-is-js {
         @apply flex items-start justify-start;
     }
+    .flex-is-jb {
+        @apply flex items-start justify-between;
+    }
     .flex-ic-jb {
         @apply flex items-center justify-between;
     }

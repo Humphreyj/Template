@@ -17,7 +17,7 @@ export const componentStyles = {
         backdropClass:
             'absolute w-screen h-screen md:hidden z-[5] bg-black opacity-45',
         containerClass:
-            'w-max min-w-40 h-screen absolute md:relative bg-sidebarBackground dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r',
+            'w-max min-w-40 overflow-x-hidden h-screen absolute md:relative bg-sidebarBackground dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r',
         titleClass: 'primary-text font-bold font-display text-xl mb-4',
         navContainerClass: 'flex-col-is-js gap-2',
         navLinkClass:

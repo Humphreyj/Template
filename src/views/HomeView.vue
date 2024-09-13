@@ -1,24 +1,14 @@
 <script setup>
-import { ref } from 'vue'
-import { useToggle } from '@vueuse/core'
-import { storeToRefs } from 'pinia'
 // Components
 import MetricCard from '@/components/cards/MetricCard.vue'
 import Card from '@/components/UI/Card.vue'
-import Chart from '@/components/UI/Chart.vue'
-import BasicForm from '../components/forms/BasicForm.vue'
-// Pinia
-import { usePrimaryStore } from '../stores/primaryStore'
-// Utils
-import { barChartOptions } from '@/utils/barGraph.js'
-import { barSeries } from '@/utils/barGraph.js'
-import { pieChartOptions } from '@/utils/pieGraph.js'
-import { pieSeries } from '@/utils/pieGraph.js'
 
+import MessagesList from '@/demo/MessagesList.vue'
+// Pinia
+
+// Utils
 // const props = defineProps({})
 // const emit = defineEmits()
-
-const { sampleUser } = storeToRefs(usePrimaryStore())
 </script>
 
 <template>
@@ -47,21 +37,11 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
                 metric-type="number"
             />
         </section>
+
         <Card container-class="mt-2">
-            <section>
-                <header class="px-2 border-b flex-ic-js h-14">
-                    <h4 class="text-xl font-semibold font-display">
-                        Recent Activity
-                    </h4>
-                </header>
-                <div class="w-full gap-2 py-2 my-1 flex-col-ic-js">
-                    <div
-                        v-for="i in 5"
-                        class="bg-gray-200 h-14 w-[98%] rounded-md mx-auto flex-ic-js dark:bg-slate-700"
-                    ></div>
-                </div>
+            <section class="flex-col-is-js md:flex-ic-js md:flex-row">
+                <MessagesList />
             </section>
-            <BasicForm class="w-1/2" :data="sampleUser" />
         </Card>
     </section>
 </template>

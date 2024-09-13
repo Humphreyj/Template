@@ -108,7 +108,7 @@ const classes = ref(getStyles(props, 'textInput'))
                 <SvgComponent
                     :svg="selectCaret"
                     class="absolute mt-2 right-2 top-1 dark:text-white"
-                    size="18"
+                    size="14"
                 />
                 <span v-if="selectedValue">{{ selectedValue.label }}</span>
                 <span
