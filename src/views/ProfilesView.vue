@@ -12,9 +12,12 @@ import Button from '@/components/UI/Button.vue'
         class="w-full max-w-[75rem] mx-auto primary-text px-2 pt-8 font-display flex-col-ic-js"
     >
         <Card>
-            <section class="flex-ic-jc primary-text w-full">
+            <section class="w-full gap-8 py-8 flex-ic-jc primary-text">
                 <RouterLink to="/profiles/new">
                     <Button text="New User" />
+                </RouterLink>
+                <RouterLink to="/profiles/details/1">
+                    <Button text="View Details" />
                 </RouterLink>
             </section>
         </Card>

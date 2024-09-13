@@ -35,6 +35,12 @@ const routes = [
                 name: 'New Profile',
                 component: () => import('@/components/profile/NewUser.vue'),
             },
+            {
+                path: 'details/:id',
+                name: 'User Details',
+                component: () =>
+                    import('@/components/profile/ProfileDetails.vue'),
+            },
         ],
         meta: {
             transition: 'fade',
