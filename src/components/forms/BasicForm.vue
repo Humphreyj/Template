@@ -4,6 +4,9 @@ import { ref } from 'vue'
 import Card from '@/components/UI/Card.vue'
 import TextInput from '@/components/inputs/TextInput.vue'
 import Button from '@/components/UI/Button.vue'
+import BasicSelect from '@/components/inputs/BasicSelect.vue'
+// Data
+import states from '@/constants/states'
 const props = defineProps({
     formTitle: {
         type: String,
@@ -28,15 +31,19 @@ const handleSubmit = (e) => {
 
 <template>
     <Card>
-        <section class="flex-col-ic-js gap-1 w-full">
-            <h4 class="title-text my-2">{{ formTitle }}</h4>
+        <section class="w-full gap-1 p-4 flex-col-ic-js">
+            <h4 class="my-2 title-text">{{ formTitle }}</h4>
             <TextInput label="User Name" v-model="userData.name" />
             <TextInput
                 label="Street Address"
                 v-model="userData.address_line_1"
             />
             <TextInput label="City" v-model="userData.city" />
-            <TextInput label="State" v-model="userData.state" />
+            <BasicSelect
+                v-model="userData.state"
+                label="State"
+                :options="states"
+            />
             <TextInput label="Zip" v-model="userData.zip" max-length="5" />
             <TextInput label="Email" v-model="userData.email" />
             <TextInput

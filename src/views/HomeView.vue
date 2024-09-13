@@ -1,17 +1,14 @@
 <script setup>
-import { ref } from 'vue'
-import { useToggle } from '@vueuse/core'
-import { storeToRefs } from 'pinia'
 // Components
 import MetricCard from '@/components/cards/MetricCard.vue'
+import Card from '@/components/UI/Card.vue'
+
 import MessagesList from '@/demo/MessagesList.vue'
 // Pinia
-import { usePrimaryStore } from '../stores/primaryStore'
+
 // Utils
 // const props = defineProps({})
 // const emit = defineEmits()
-
-const { sampleUser } = storeToRefs(usePrimaryStore())
 </script>
 
 <template>
@@ -40,6 +37,11 @@ const { sampleUser } = storeToRefs(usePrimaryStore())
                 metric-type="number"
             />
         </section>
-        <MessagesList />
+
+        <Card container-class="mt-2">
+            <section class="flex-col-is-js md:flex-ic-js md:flex-row">
+                <MessagesList />
+            </section>
+        </Card>
     </section>
 </template>

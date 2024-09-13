@@ -24,11 +24,15 @@ export const componentStyles = {
             'text-lg text-gray-800 dark:text-gray-200 font-display min-w-32 p-1 rounded-md hover:bg-gray-300 hover:dark:bg-gray-500 hover:bg-opacity-70',
     },
     textInput: {
-        containerClass: 'flex-col-is-js w-full ',
+        containerClass: 'flex-col-is-js w-full',
         labelClass:
             'font-bold text-gray-900 mb-1 dark:text-white dark:opacity-95',
         inputClass:
             'border p-1 border-gray-700 dark:border-gray-600 shadow-md rounded-md w-full dark:bg-gray-700 text-lg primary-text dark:shadow-slate-900',
+        optionsClass:
+            'border absolute bg-gray-800 border-t-0 overflow-y-scroll border-gray-cool-300 h-32 w-full rounded-lg  z-10 p-1  mt-[-.2rem]',
+        optionClass:
+            'rounded-lg text-gray-cool-900 cursor-pointer text-15 hover:bg-gray-cool-300',
     },
     textBlock: {
         containerClass: 'flex-col-ic-jc w-full',
