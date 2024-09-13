@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 import HomeView from '@/views/HomeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
+import ProfilesView from '@/views/ProfilesView.vue'
 
 const routes = [
     {
@@ -21,6 +22,23 @@ const routes = [
         meta: {
             transition: 'fade',
             order: 1,
+            viewLoaded: false,
+        },
+    },
+    {
+        path: '/profiles',
+        component: ProfilesView,
+        name: 'profiles',
+        children: [
+            {
+                path: 'new',
+                name: 'New Profile',
+                component: () => import('@/components/profile/NewUser.vue'),
+            },
+        ],
+        meta: {
+            transition: 'fade',
+            order: 2,
             viewLoaded: false,
         },
     },

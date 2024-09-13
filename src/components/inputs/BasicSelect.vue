@@ -77,7 +77,9 @@ const messages = computed(() => {
 })
 onMounted(() => {
     let found = props.options.find((state) => state.value === props.modelValue)
-    selectedValue.value = found.label
+    if (selectedValue.value) {
+        selectedValue.value = found.label
+    }
 })
 
 const classes = ref(getStyles(props, 'textInput'))

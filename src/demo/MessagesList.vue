@@ -9,7 +9,7 @@ import { messages } from '@/demo/data/demoData'
 </script>
 
 <template>
-    <Card container-class="my-2 shadow box-shadow">
+    <Card container-class="my-2 shadow box-shadow px-2 border-none">
         <section>
             <header class="px-3 border-b flex-ic-jb h-14">
                 <h4 class="text-xl font-semibold font-display">
@@ -17,7 +17,7 @@ import { messages } from '@/demo/data/demoData'
                 </h4>
                 <p>View All</p>
             </header>
-            <div class="w-full gap-2 pb-2 flex-col-ic-js">
+            <div class="w-full gap-2 py-3 flex-col-ic-js">
                 <ListCard
                     v-for="message in messages"
                     :key="message.id"

@@ -2,7 +2,6 @@
 import { RouterView } from 'vue-router'
 import Sidedrawer from '@/components/UI/Sidedrawer.vue'
 import AppHeader from '@/components/UI/AppHeader.vue'
-import PageLayout from '@/components/UI/PageLayout.vue'
 </script>
 
 <template>
@@ -14,15 +13,15 @@ import PageLayout from '@/components/UI/PageLayout.vue'
             <AppHeader />
             <RouterView v-slot="{ Component, route }">
                 <!-- Use a custom transition or fallback to `fade` -->
-                <transition :name="route.meta.transition || 'fade'">
-                    <component :is="Component" />
-                </transition>
+                <!-- <transition :name="route.meta.transition || 'fade'"> -->
+                <component :is="Component" />
+                <!-- </transition> -->
             </RouterView>
         </section>
     </div>
 </template>
 
-<style scoped>
+<style>
 /* width */
 ::-webkit-scrollbar {
     width: 1px;
