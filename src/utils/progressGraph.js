@@ -122,12 +122,6 @@ export const progressGraphOptions = {
         },
     },
     labels: ['Average Results'],
-    methods: {
-        update: function () {
-            console.log(this)
-            this.series = [44]
-        }
-    }
 } 
 
 export const progressSeries = [63]

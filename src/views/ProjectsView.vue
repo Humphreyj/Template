@@ -3,6 +3,7 @@
 import Card from '@/components/UI/Card.vue'
 import TeamList from '@/components/UI/TeamList.vue'
 import Chart from '@/components/UI/Chart.vue'
+import Button from '@/components/UI/Button.vue'
 
 // Charts/Graphs
 import { barChartOptions } from '@/utils/barGraph.js';
@@ -38,9 +39,23 @@ import { pieMethods } from '@/utils/pieGraph.js'
                 :chart-series="progressSeries"
             />
             <section class="flex-col-ic-js">
-                <button @click="progressMethods.randomize">Update Progress Bar</button>
-                <button @click="barMethods.randomize">Update Bar Chart</button>
-                <button @click="pieMethods.randomize">Update pie Chart</button>
+                <Button 
+                    text="Update Progress"
+                    @click="progressMethods.update"
+                />
+                <Button 
+                    text="Randomize Progress"
+                    @click="progressMethods.randomize"
+                />
+                
+                <Button 
+                    text="Randomize Pie Chart"
+                    @click="pieMethods.randomize"
+                />
+                <Button 
+                    text="Randomize Bar Chart"
+                    @click="barMethods.randomize"
+                />
             </section>
 
 
