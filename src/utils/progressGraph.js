@@ -137,6 +137,16 @@ export const progressMethods = {
     update: function () {
         let newSeries = [70]
         ApexCharts.exec('progressBar', 'updateSeries', newSeries, true)
+    },
+    randomize: function () {
+        let randInt = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+        let randomSeries = [randInt]
+        console.log(randomSeries)
+        
+
+        
+        ApexCharts.exec('progressBar', 'updateSeries', randomSeries)
+
     }
 }
 

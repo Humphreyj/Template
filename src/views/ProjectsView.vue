@@ -37,9 +37,11 @@ import { pieMethods } from '@/utils/pieGraph.js'
                 :chart-options="progressGraphOptions"
                 :chart-series="progressSeries"
             />
-            <button @click="progressMethods.update">Update Progress Bar</button>
-            <button @click="barMethods.update">Update Bar Chart</button>
-            <button @click="pieMethods.update">Update pie Chart</button>
+            <section class="flex-col-ic-js">
+                <button @click="progressMethods.randomize">Update Progress Bar</button>
+                <button @click="barMethods.randomize">Update Bar Chart</button>
+                <button @click="pieMethods.randomize">Update pie Chart</button>
+            </section>
 
 
         </section>

@@ -93,5 +93,18 @@ export const pieMethods = {
     update: function () {
         let newSeries = [16, 32, 64, 8, 2]
         ApexCharts.exec('pieChart', 'updateSeries', newSeries, true)
+    },
+    randomize: function () {
+        let randomSeries = [16, 32, 64, 8, 2]
+        
+
+        for (let index = 0; index < randomSeries.length; index++) {
+            let randInt = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+            randomSeries[index] = randInt;
+            
+        }
+        let newSeries = randomSeries
+        ApexCharts.exec('pieChart', 'updateSeries', newSeries)
+
     }
 }
