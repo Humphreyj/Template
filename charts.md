@@ -4,7 +4,7 @@ https://apexcharts.com/
 
 ## Flow
 
-Charts.vue component is fed the options from their respective file in the util folder to keep the component clean and dynamic
+Charts.vue component is fed the options from their respective file in the util folder to keep the component clean and dynamic.
 
 ## Pitfalls
 

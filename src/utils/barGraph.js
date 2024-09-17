@@ -112,3 +112,29 @@ export const barSeries = [
         data: [30, 40, 45, 50, 49, 60, 70, 91],
     },
 ]
+export const barMethods = {
+    
+    update: function () {
+        let newSeries = [{
+            data: [80, 95, 20, 10, 42, 65, 19, 91]
+        }]
+        
+        
+        ApexCharts.exec('barChart', 'updateSeries', newSeries, true)
+    },
+    randomize: function () {
+        let randomSeries = [80, 95, 20, 10, 42, 65, 19, 91]
+        
+
+        for (let index = 0; index < randomSeries.length; index++) {
+            let randInt = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+            randomSeries[index] = randInt;
+            
+        }
+        let newSeries = [{
+            data: randomSeries
+        }]
+        ApexCharts.exec('barChart', 'updateSeries', newSeries)
+
+    }
+}
