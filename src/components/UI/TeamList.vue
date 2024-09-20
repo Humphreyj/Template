@@ -34,7 +34,7 @@ const team = [
 <template>
     <section class="w-100">
         <Card>
-            <section class="flex-col m-2 text-left w-100">
+            <section class="m-2 flex-col-js w-100">
                 <TextBlock 
                     :text-content="title" 
                     content-class="text-2xl font-bold text-left"

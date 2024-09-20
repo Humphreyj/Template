@@ -18,6 +18,10 @@ const props = defineProps({
     contentClass: {
         type: String, 
         default: ''
+    },
+    containerClass: {
+        type: String,
+        default: ''
     }
 })
 const classes = ref(getStyles(props, 'textBlock'))
