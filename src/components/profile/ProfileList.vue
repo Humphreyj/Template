@@ -12,10 +12,10 @@ import { handleFormat } from '@/utils/formatText'
 
 <template>
     <Card container-class="px-2 my-2 border-none shadow box-shadow">
-        <section>
+        <section class="primary-text">
             <header class="px-3 border-b flex-ic-jb h-14">
                 <h4 class="text-xl font-semibold font-display">
-                    Recent Messages
+                    Manage Profiles
                 </h4>
                 <p>View All</p>
             </header>
