@@ -39,7 +39,7 @@ export const componentStyles = {
             'rounded-lg text-gray-cool-900 cursor-pointer text-15 hover:bg-gray-cool-300',
     },
     textBlock: {
-        containerClass: 'flex-col-ic-jc w-full',
+        containerClass: 'flex-col-is-js w-full',
         labelClass:
             'font-bold primary-text dark:opacity-95 text-center dark:text-white',
         contentClass: 'font-semibold dark:text-white',

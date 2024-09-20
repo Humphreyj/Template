@@ -47,14 +47,20 @@ onMounted(() => {
         </h3>
         <div class="w-full gap-1 flex-ic-jend">
             <Button v-if="width < 768" @click="toggleSidebar()" text="Bar" />
-            <div class="">
+            <div>
                 <Button 
-                text='&#128276;'
-                @click="toggleModal()"
+                    text='&#128276;'
+                    @click="toggleModal()"
                 />
+                <span
+                    v-if="dropdownModalContent.length > 0"
+                    class="absolute top-0 inline-flex items-center justify-center px-1.5 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full right-10"
+                    >
+                    {{ dropdownModalContent.length }}
+                </span>
                 <Modal 
-                    container-class="border -left-48"
-                    modal-content-class="text-left rounded-md cursor-pointer hover:bg-black hover:bg-opacity-20"
+                    container-class="-left-48"
+                    modal-content-class="p-1 mb-2 border-b-2 rounded-md cursor-pointer hover:bg-black hover:bg-opacity-20 hover:dark:bg-white hover:dark:bg-opacity-20"
                     :modal-content="dropdownModalContent"
                 />
             </div>

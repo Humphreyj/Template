@@ -33,7 +33,7 @@ const classes = ref(getStyles(props, 'textBlock'))
         <p :class="classes.labelClass" v-if="label">
             {{ label }}
         </p>
-        <div class="text-left min-h-6">
+        <div class="min-h-6">
             <p :class="classes.contentClass">{{ textContent }}</p>
         </div>
     </div>

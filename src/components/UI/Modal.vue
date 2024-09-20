@@ -1,6 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-
+// Pinia / Store data
 import { useModalStore } from '@/stores/modalStore'
 import { storeToRefs } from 'pinia'
 const { showModal } = storeToRefs(useModalStore())
@@ -21,27 +20,19 @@ const props = defineProps({
     },
     containerClass: {
         type: String,
-        default: 'text-left',
+        default: 'mb-2',
     },
     titleClass: {
         type: String,
         default: '',
     },
-    titleText: {
-        type: String,
-        default: ''
-    },
-    content: {
-        type: String,
-        default: ''
+    modalContent: {
+        type: Object,
+        default: {}
     },
     modalContentClass: {
         type: String,
         default: ''
-    },
-    modalContent: {
-        type: Object,
-        default: {}
     }
     
 })
@@ -50,7 +41,7 @@ const classes = getStyles(props, 'modal')
 </script>
 
 <template>
-    <section class="absolute w-max right-100">
+    <section class="absolute">
         <div
             v-if="showModal"
             id="backdrop"
