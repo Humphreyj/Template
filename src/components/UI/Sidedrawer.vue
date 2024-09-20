@@ -74,6 +74,12 @@ const classes = getStyles(props, 'sidebar')
                         @click="handleNavigation"
                         >Projects</RouterLink
                     >
+                    <RouterLink
+                        to="/profiles"
+                        :class="classes.navLinkClass"
+                        @click="handleNavigation"
+                        >Profiles</RouterLink
+                    >
                 </div>
             </section>
         </section>

@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 import HomeView from '@/views/HomeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
+import ProfilesView from '@/views/ProfilesView.vue'
 
 const routes = [
     {
@@ -24,11 +25,39 @@ const routes = [
             viewLoaded: false,
         },
     },
+    {
+        path: '/profiles',
+        component: ProfilesView,
+        name: 'profiles',
+        children: [
+            {
+                path: '',
+                name: 'Manage Profiles',
+                component: () => import('@/components/profile/ProfileList.vue'),
+            },
+            {
+                path: 'new',
+                name: 'New Profile',
+                component: () => import('@/components/profile/NewUser.vue'),
+            },
+            {
+                path: 'details/:id',
+                name: 'User Details',
+                component: () =>
+                    import('@/components/profile/ProfileDetails.vue'),
+            },
+        ],
+        meta: {
+            transition: 'fade',
+            order: 3,
+            viewLoaded: false,
+        },
+    },
 ]
 
 const router = createRouter({
     linkActiveClass:
-        'font-bold border bg-primary-400 text-white dark:bg-secondary-400 shadow-md',
+        'font-bold  bg-primary-400 rounded-lg text-white dark:bg-secondary-400 shadow-md',
     history: createWebHistory(),
     routes,
 })

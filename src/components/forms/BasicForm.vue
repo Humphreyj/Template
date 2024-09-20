@@ -30,10 +30,14 @@ const handleSubmit = (e) => {
 </script>
 
 <template>
-    <Card>
-        <section class="w-full gap-1 p-4 flex-col-ic-js">
+    <Card container-class="w-11/12 gap-1 p-4 mx-auto mt-8">
+        <section class="w-full gap-1 p-4 mx-auto flex-col-ic-js">
             <h4 class="my-2 title-text">{{ formTitle }}</h4>
-            <TextInput label="User Name" v-model="userData.name" />
+            <TextInput
+                v-model="userData.name"
+                label="User Name"
+                input-class="min-w-60"
+            />
             <TextInput
                 label="Street Address"
                 v-model="userData.address_line_1"
