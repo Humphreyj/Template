@@ -37,7 +37,8 @@ const team = [
             <section class="flex-col m-2 text-left w-100">
                 <TextBlock 
                     :text-content="title" 
-                    content-class="text-2xl font-bold text-left"
+                    content-class="text-2xl font-bold"
+                    container-class="text-left"
                 />
                 <section class="flex flex-row items-center h-20" v-for="member in team">
                     <Avatar 

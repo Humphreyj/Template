@@ -4,9 +4,11 @@ import { getStyles } from '@/composables/getStyles'
 import { useDark, useToggle, useWindowSize } from '@vueuse/core'
 // Components
 import Button from '@/components/UI/Button.vue'
+import Modal from '@/components/UI/Modal.vue'
 // Pinia
 import { storeToRefs } from 'pinia'
 import { usePrimaryStore } from '@/stores/primaryStore'
+import { useModalStore } from '@/stores/modalStore'
 const props = defineProps({
     textClass: {
         type: String,
@@ -17,6 +19,8 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 const { showSidebar } = storeToRefs(usePrimaryStore())
 const { toggleSidebar } = usePrimaryStore()
+const { dropdownModalContent } = storeToRefs(useModalStore())
+const { toggleModal } = useModalStore()
 const { width } = useWindowSize()
 
 watch(width, (newWidth) => {
@@ -37,16 +41,28 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="flex-ic-jb p-2 border-b border-gray-600 shadow-md">
-        <h3 class="primary-text font-bold w-full md:hidden text-xl">
+    <section class="p-2 border-b border-gray-600 shadow-md flex-ic-jb">
+        <h3 class="w-full text-xl font-bold primary-text md:hidden">
             New Client
         </h3>
-        <div class="flex-ic-jend w-full gap-1">
+        <div class="w-full gap-1 flex-ic-jend">
             <Button v-if="width < 768" @click="toggleSidebar()" text="Bar" />
+            <div class="">
+                <Button 
+                text='&#128276;'
+                @click="toggleModal()"
+                />
+                <Modal 
+                    container-class="border -left-48"
+                    modal-content-class="text-left rounded-md cursor-pointer hover:bg-black hover:bg-opacity-20"
+                    :modal-content="dropdownModalContent"
+                />
+            </div>
             <Button
                 @click="toggleDark()"
                 :text="isDark ? '&#9788;' : '&#9789;'"
             />
         </div>
+        
     </section>
 </template>
