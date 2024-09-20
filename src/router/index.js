@@ -31,6 +31,11 @@ const routes = [
         name: 'profiles',
         children: [
             {
+                path: '',
+                name: 'Manage Profiles',
+                component: () => import('@/components/profile/ProfileList.vue'),
+            },
+            {
                 path: 'new',
                 name: 'New Profile',
                 component: () => import('@/components/profile/NewUser.vue'),
@@ -44,7 +49,7 @@ const routes = [
         ],
         meta: {
             transition: 'fade',
-            order: 2,
+            order: 3,
             viewLoaded: false,
         },
     },
@@ -52,7 +57,7 @@ const routes = [
 
 const router = createRouter({
     linkActiveClass:
-        'font-bold border bg-primary-400 text-white dark:bg-secondary-400 shadow-md',
+        'font-bold  bg-primary-400 rounded-lg text-white dark:bg-secondary-400 shadow-md',
     history: createWebHistory(),
     routes,
 })

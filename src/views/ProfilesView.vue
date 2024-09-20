@@ -8,19 +8,17 @@ import Button from '@/components/UI/Button.vue'
 </script>
 
 <template>
-    <div
-        class="w-full max-w-[75rem] mx-auto primary-text px-2 pt-8 font-display flex-col-ic-js"
+    <Card
+        container-class="w-11/12 max-w-[75rem] mx-auto primary-text px-2 mt-8 font-display flex-col-ic-js"
     >
-        <Card>
-            <section class="w-full gap-8 py-8 flex-ic-jc primary-text">
-                <RouterLink to="/profiles/new">
-                    <Button text="New User" />
-                </RouterLink>
-                <RouterLink to="/profiles/details/1">
-                    <Button text="View Details" />
-                </RouterLink>
-            </section>
-        </Card>
-        <RouterView />
-    </div>
+        <section class="w-full gap-8 py-8 flex-ic-jc primary-text">
+            <RouterLink to="/profiles" class="border-none">
+                <Button text="View List" />
+            </RouterLink>
+            <RouterLink to="/profiles/new" class="border-none">
+                <Button text="New User" />
+            </RouterLink>
+        </section>
+    </Card>
+    <RouterView />
 </template>
