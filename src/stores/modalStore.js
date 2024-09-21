@@ -8,7 +8,7 @@ export const useModalStore = defineStore('modalStore', () => {
   const toggleModal = useToggle(showModal)
   // Array of objects to pass into the Modal component so that it can stay dynamic
   // This implementation of the modal is in AppHeader to handle the notification dropdown
-  const dropdownModalContent = ref(
+  const notificationModalContent = ref(
     [
         {
             titleText: 'Messages',
@@ -25,7 +25,7 @@ export const useModalStore = defineStore('modalStore', () => {
   }
   const values = {
     showModal,
-    dropdownModalContent
+    notificationModalContent
   }
   return { ...actions, ...values }
 })

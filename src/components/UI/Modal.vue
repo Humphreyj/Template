@@ -49,13 +49,7 @@ const classes = getStyles(props, 'modal')
             @click="toggleModal()"
         ></div>
         <section v-if="showModal" :class="classes.containerClass" >
-            <TextBlock v-for="item in modalContent"
-                :label="item.titleText"
-                :text-content="item.content"
-                :label-class="titleClass"
-                :container-class="modalContentClass"
-                
-            />
+            <slot></slot>
         </section>
     </section>
 </template>
