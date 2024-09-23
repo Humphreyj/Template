@@ -8,7 +8,7 @@ import { getStyles } from '@/composables/getStyles'
 import selectCaret from '@/assets/SelectCaret.vue'
 
 const props = defineProps({
-    modelValue: [String, Object],
+    modelValue: [String, Object, Boolean],
     options: {
         type: Array,
         required: true,
@@ -87,9 +87,12 @@ const classes = ref(getStyles(props, 'textInput'))
 
 <template>
     <section :class="classes.containerClass">
-        <label ref="select-label" :class="classes.labelClass">{{
-            label
-        }}</label>
+        <label
+            ref="select-label"
+            data-test="select-label"
+            :class="classes.labelClass"
+            >{{ label }}</label
+        >
         <OnClickOutside
             class="relative w-full mt-2"
             @trigger="showOptions = false"
@@ -138,9 +141,10 @@ const classes = ref(getStyles(props, 'textInput'))
                     :class="classes.optionsClass"
                 >
                     <div
-                        v-for="option in options"
+                        v-for="(option, i) in options"
                         :key="option.value"
                         tabindex="0"
+                        :data-test="`select-option-${i}`"
                         :class="classes.optionClass"
                         :value="option.value"
                         @click="setSelected(option)"

@@ -24,7 +24,11 @@ const classes = getStyles(props, props.buttonType, 'buttons')
 </script>
 
 <template>
-    <button :class="classes.buttonClass" :disabled="disabled">
+    <button
+        data-test="button-text"
+        :class="classes.buttonClass"
+        :disabled="disabled"
+    >
         {{ text }}
     </button>
 </template>
