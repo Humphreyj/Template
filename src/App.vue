@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import Sidedrawer from '@/components/UI/Sidedrawer.vue'
 import AppHeader from '@/components/UI/AppHeader.vue'
+import ModalContainer from '@/components/UI/ModalContainer.vue'
 </script>
 
 <template>
@@ -9,7 +10,8 @@ import AppHeader from '@/components/UI/AppHeader.vue'
         class="pb-6 overflow-y-auto h-dvh bg-appBackground dark:bg-appBackgroundDark flex-is-js"
     >
         <Sidedrawer />
-        
+        <ModalContainer />
+
         <section class="w-full overflow-y-scroll">
             <AppHeader />
             <RouterView v-slot="{ Component, route }">

@@ -13,9 +13,9 @@ import { getStyles } from '@/composables/getStyles'
 
 // Pinia
 import { useModalStore } from '@/stores/modalStore';
-const modalStore = useModalStore();
-const { toggleSettingsModal } = modalStore;
-const { changeTeamMember } = modalStore
+import { storeToRefs } from 'pinia'
+const { changeTeamMember } = useModalStore();
+const {memberSettingsModal} = storeToRefs(useModalStore())
 
 const props = defineProps({
     containerClass: {
@@ -50,7 +50,8 @@ const team = [
 ]
 const openModal = (member) => {
     changeTeamMember(member)
-    toggleSettingsModal()
+    // toggleSettingsModal()
+    memberSettingsModal.value.toggle()
 }
 const classes = getStyles(props, 'textBlock')
 </script>
@@ -73,13 +74,13 @@ const classes = getStyles(props, 'textBlock')
                         label-class="font-bold text-left text-black-600 opacity-1"
                         content-class="text-xs"
                     />
-                    <div class="flex flex-row justify-end items-center">
+                    <div class="flex flex-row items-center justify-end">
                         
                         <Button 
                             text="&#x2709"
                         />
                         <slot name="icon">
-                            <Cog6ToothIcon class=" cursor-pointer size-6" @click="openModal(member)"/>
+                            <Cog6ToothIcon class="cursor-pointer size-6" @click="openModal(member)"/>
                         </slot>
                         
                     </div>
