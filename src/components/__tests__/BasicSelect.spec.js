@@ -17,7 +17,7 @@ describe('Basic Select tests', () => {
 
         await flushPromises()
         const input = wrapper.find('[data-test="select-input"]')
-
+        expect(input.element.value).toBe('No')
         // Ensure the internal modelValue is set to false
         expect(wrapper.props('modelValue')).toBe(false)
     })

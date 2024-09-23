@@ -17,14 +17,14 @@ const team = [
         img: "https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo"
     },
     {
-        name: 'Pickle',
+        name: 'Pickle Man',
         title: 'Trash Annihalator',
-        img: "https://www.gravatar.com/avatar/3b3be63a4c2a439b013787725dfce802?d=identicon"
+        img: ""
     },
     {
-        name: 'Brandy',
+        name: '',
         title: 'Goblin',
-        img: "https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo"
+        img: ""
 
     },
     
@@ -39,7 +39,7 @@ const team = [
                     :text-content="title" 
                     content-class="text-2xl font-bold text-left"
                 />
-                <section class="flex flex-row items-center h-20" v-for="member in team">
+                <section class="flex flex-row items-center h-20 gap-3" v-for="member in team">
                     <Avatar 
                         :username="member.name"
                         :avatar-img="member.img"
