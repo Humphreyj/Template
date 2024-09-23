@@ -14,4 +14,10 @@ export default defineConfig({
     server: {
         port: 3030,
     },
+    test: {
+        globals: true,
+        coverage: {
+            provider: 'c8', // or 'c8'
+        },
+    },
 })
