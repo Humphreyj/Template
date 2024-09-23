@@ -38,7 +38,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="p-2 border-b border-gray-600 shadow-md flex-ic-jb">
+    <section class="p-2 border-b border-gray-600 shadow-md flex-ic-jb ">
         <h3 class="w-full text-xl font-bold primary-text md:hidden">
             New Client
         </h3>

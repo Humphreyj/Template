@@ -1,9 +1,11 @@
 <script setup>
 // Components
-import Card from '@/components/UI/Card.vue'
 import TeamList from '@/components/UI/TeamList.vue'
 import Chart from '@/components/UI/Chart.vue'
 import Button from '@/components/UI/Button.vue'
+import MemberSettingsModal from '@/components/UI/Modals/MemberSettingsModal.vue';
+
+
 
 // Charts/Graphs
 import { barChartOptions } from '@/utils/barGraph.js';
@@ -15,12 +17,14 @@ import { progressSeries } from '@/utils/progressGraph.js'
 import { progressMethods } from '@/utils/progressGraph.js'
 import { barMethods } from '@/utils/barGraph.js'
 import { pieMethods } from '@/utils/pieGraph.js'
+
 </script>
 
 <template>
     <section 
-        class="w-full max-w-[75rem] mx-auto primary-text px-2 font-display flex-col-ic-js"
+        class="w-full max-w-[75rem] mx-auto primary-text px-2 font-display flex-col-ic-js overflow-hidden"
     >
+        <MemberSettingsModal />
         <section class="grid w-full grid-cols-1 gap-2 mt-8 md:grid-cols-3">
             <TeamList />
             <Chart 

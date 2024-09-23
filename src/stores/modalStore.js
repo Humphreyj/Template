@@ -4,8 +4,16 @@ import { defineStore } from 'pinia'
 import { useToggle } from '@vueuse/core'
 
 export const useModalStore = defineStore('modalStore', () => {
-  const showModal = ref(false)
-  const toggleModal = useToggle(showModal)
+  const showNotifModal = ref(false);
+  //const toggleNotifModal = useToggle(showNotifModal);
+  const toggleNotifModal = () => {
+    showNotifModal.value = !showNotifModal.value  
+  }
+  const showSettingsModal = ref(false)
+  //const toggleSettingsModal = useToggle(showSettingsModal)
+  const toggleSettingsModal = () => {
+    showSettingsModal.value = !showSettingsModal.value
+  }
   // Array of objects to pass into the Modal component so that it can stay dynamic
   // This implementation of the modal is in AppHeader to handle the notification dropdown
   const notificationModalContent = ref(
@@ -20,12 +28,27 @@ export const useModalStore = defineStore('modalStore', () => {
         }
       ]
   )
+
+  const changeTeamMember = (member) => {
+    console.log(member)
+    selectedTeamMember.value.name = member.name
+    selectedTeamMember.value.title = member.title
+    console.log(selectedTeamMember.value)
+  }
+  const selectedTeamMember = ref({
+    name: '',
+    title: ''
+  })
   const actions = {
-    toggleModal,
+    toggleNotifModal,
+    toggleSettingsModal,
+    changeTeamMember
   }
   const values = {
-    showModal,
-    notificationModalContent
+    showNotifModal,
+    showSettingsModal,
+    notificationModalContent, 
+    selectedTeamMember
   }
   return { ...actions, ...values }
 })

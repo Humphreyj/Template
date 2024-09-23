@@ -2,13 +2,10 @@
 // Pinia / Store data
 import { useModalStore } from '@/stores/modalStore'
 import { storeToRefs } from 'pinia'
-const { showModal } = storeToRefs(useModalStore())
-const { toggleModal } = useModalStore()
+//const { showModal } = storeToRefs(useModalStore())
 
-// Components
-import TextBlock from './TextBlock.vue';
-// Utils
-import { getStyles } from '@/composables/getStyles'
+
+//Props
 const props = defineProps({
     textClass: {
         type: String,
@@ -33,20 +30,30 @@ const props = defineProps({
     modalContentClass: {
         type: String,
         default: ''
+    },
+    showModal: {
+        type: Boolean, 
+        
+    },
+    toggleModal: {
+        type: Function,
+        
     }
     
 })
+// Utils
+import { getStyles } from '@/composables/getStyles'
 const classes = getStyles(props, 'modal')
 
 </script>
 
 <template>
-    <section class="absolute">
+    <section class="relative">
         <div
             v-if="showModal"
             id="backdrop"
             :class="classes.backdropClass"
-            @click="toggleModal()"
+            @click="toggleModal"
         ></div>
         <section v-if="showModal" :class="classes.containerClass" >
             <slot></slot>
