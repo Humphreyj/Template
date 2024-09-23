@@ -77,7 +77,7 @@ const messages = computed(() => {
 })
 onMounted(() => {
     let found = props.options.find((state) => state.value === props.modelValue)
-    if (selectedValue.value) {
+    if (found) {
         selectedValue.value = found.label
     }
 })
