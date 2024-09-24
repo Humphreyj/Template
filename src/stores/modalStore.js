@@ -24,7 +24,6 @@ export const useModalStore = defineStore('modalStore', () => {
 
     const memberSettingsModal = ref(handleModal(false))
     const notificationModal = ref(handleModal(false))
-    const showNotifModal = ref(false)
 
     // Array of objects to pass into the Modal component so that it can stay dynamic
     // This implementation of the modal is in AppHeader to handle the notification dropdown
@@ -48,13 +47,9 @@ export const useModalStore = defineStore('modalStore', () => {
         title: '',
     })
     const actions = {
-        toggleNotifModal,
-        toggleSettingsModal,
         changeTeamMember,
     }
     const values = {
-        showNotifModal,
-        showSettingsModal,
         notificationModalContent,
         memberSettingsModal,
         notificationModal,
