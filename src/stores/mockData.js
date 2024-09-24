@@ -7,7 +7,7 @@ export const userProfileMocks = [
         state: 'ga',
         zip: '61714',
         email: 'melanie56@yahoo.com',
-        phone: '+1-148-438-4443x919',
+        phone: '148-438-4443',
         created_at: '2024-09-23T19:28:48.439381',
     },
     {
@@ -18,7 +18,7 @@ export const userProfileMocks = [
         state: 'ca',
         zip: '81520',
         email: 'scott89@hotmail.com',
-        phone: '+1-361-238-7595x212',
+        phone: '361-238-7595',
         created_at: '2024-09-23T19:28:48.440090',
     },
     {
@@ -29,7 +29,7 @@ export const userProfileMocks = [
         state: 'pa',
         zip: '46980',
         email: 'robertquinn@scott.com',
-        phone: '+1-804-955-3802x40145',
+        phone: '804-955-3802',
         created_at: '2024-09-23T19:28:48.441118',
     },
     {
@@ -40,7 +40,7 @@ export const userProfileMocks = [
         state: 'ny',
         zip: '66167',
         email: 'bridgeskelly@hotmail.com',
-        phone: '955-805-4080x8088',
+        phone: '955-805-4080',
         created_at: '2024-09-23T19:28:48.442041',
     },
     {
@@ -51,7 +51,7 @@ export const userProfileMocks = [
         state: 'ca',
         zip: '82238',
         email: 'gperez@gmail.com',
-        phone: '084-729-0729x22358',
+        phone: '084-729-0729',
         created_at: '2024-09-23T19:28:48.442684',
     },
     {
@@ -73,7 +73,7 @@ export const userProfileMocks = [
         state: 'wa',
         zip: '14732',
         email: 'shawn40@gmail.com',
-        phone: '817.123.8531x58922',
+        phone: '817-123-8531',
         created_at: '2024-09-23T19:28:48.444220',
     },
     {
@@ -84,7 +84,7 @@ export const userProfileMocks = [
         state: 'tx',
         zip: '47792',
         email: 'higginsdavid@yahoo.com',
-        phone: '(286)686-3489x604',
+        phone: '286-686-3489',
         created_at: '2024-09-23T19:28:48.445067',
     },
     {
@@ -95,7 +95,7 @@ export const userProfileMocks = [
         state: 'ca',
         zip: '23475',
         email: 'gthompson@sanchez.info',
-        phone: '(982)242-2337',
+        phone: '982-242-2337',
         created_at: '2024-09-23T19:28:48.446259',
     },
     {
@@ -106,7 +106,7 @@ export const userProfileMocks = [
         state: 'fl',
         zip: '42110',
         email: 'ppeck@gentry.com',
-        phone: '001-225-722-6113x480',
+        phone: '001-225-722-6113',
         created_at: '2024-09-23T19:28:48.447051',
     },
 ]

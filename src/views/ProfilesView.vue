@@ -3,7 +3,7 @@ import { RouterView, useRoute } from 'vue-router'
 import router from '@/router'
 // Components
 // Assets
-import { ArrowLeftCircleIcon } from '@heroicons/vue/24/solid'
+import { ArrowLeftCircleIcon } from '@heroicons/vue/24/outline'
 // const props = defineProps({})
 // const emit = defineEmits()
 const route = useRoute()
@@ -17,7 +17,7 @@ const goBack = () => {
     <main class="relative">
         <ArrowLeftCircleIcon
             v-if="route.name !== 'Manage Profiles'"
-            class="absolute mt-2 left-4 size-8 primary-text"
+            class="absolute mt-2 cursor-pointer left-4 size-8 primary-text"
             @click="goBack"
         />
         <RouterView />
