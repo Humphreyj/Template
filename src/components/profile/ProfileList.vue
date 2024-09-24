@@ -15,9 +15,9 @@ import { RouterLink, useRoute } from 'vue-router'
 const route = useRoute()
 const { userProfiles } = storeToRefs(useProfileStore())
 const { handleUserSelect } = useProfileStore()
-const handleNavigation = (user) => {
+const handleNavigation = async (user) => {
     handleUserSelect(user)
-    router.push({ name: 'Profile Details', params: { id: user.id } })
+    await router.push({ name: 'Profile Details', params: { id: user.id } })
 }
 </script>
 
