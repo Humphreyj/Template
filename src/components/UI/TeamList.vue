@@ -4,17 +4,36 @@ import Card from '@/components/UI/Card.vue'
 import TextBlock from '@/components/UI/TextBlock.vue'
 import Button from '@/components/UI/Button.vue'
 import Avatar from '@/components/UI/Avatar.vue'
+import Modal from  '@/components/UI/Modal.vue'
 // Icons
 import { Cog6ToothIcon } from '@heroicons/vue/24/outline'
 
+// Utils
+import { getStyles } from '@/composables/getStyles'
 
+// Pinia
+import { useModalStore } from '@/stores/modalStore';
+import { storeToRefs } from 'pinia'
+const { changeTeamMember } = useModalStore();
+const {memberSettingsModal} = storeToRefs(useModalStore())
+
+const props = defineProps({
+    containerClass: {
+        type: String,
+        default: 'w-1/2',
+    },
+    iconClass: {
+        type: String,
+        default: '',
+    },
+}) 
 
 const title = 'Team List'
 const team = [
     {
         name: 'Dill',
         title: 'Dumbass',
-        img: "https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo"
+        img: "https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo",
     },
     {
         name: 'Pickle Man',
@@ -29,7 +48,12 @@ const team = [
     },
     
 ]
-
+const openModal = (member) => {
+    changeTeamMember(member)
+    // toggleSettingsModal()
+    memberSettingsModal.value.toggle()
+}
+const classes = getStyles(props, 'textBlock')
 </script>
 <template>
     <section class="w-100">
@@ -50,14 +74,15 @@ const team = [
                         label-class="font-bold text-left text-black-600 opacity-1"
                         content-class="text-xs"
                     />
-                    <div class="flex flex-row justify-end w-4/5">
+                    <div class="flex flex-row items-center justify-end">
                         
                         <Button 
                             text="&#x2709"
                         />
-                        <Button
-                            text="..." 
-                        />
+                        <slot name="icon">
+                            <Cog6ToothIcon class="cursor-pointer size-6" @click="openModal(member)"/>
+                        </slot>
+                        
                     </div>
                 </section>
                 

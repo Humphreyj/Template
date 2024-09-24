@@ -1,16 +1,16 @@
 <script setup>
 // Components
-import Card from '@/components/UI/Card.vue'
 import TeamList from '@/components/UI/TeamList.vue'
 import Chart from '@/components/UI/Chart.vue'
 import Button from '@/components/UI/Button.vue'
+import MemberSettingsModal from '@/components/UI/Modals/MemberSettingsModal.vue'
 
 // Charts/Graphs
-import { barChartOptions } from '@/utils/barGraph.js';
-import { barSeries } from '@/utils/barGraph.js';
-import { pieChartOptions } from '@/utils/pieGraph.js';
-import { pieSeries } from '@/utils/pieGraph.js';
-import { progressGraphOptions } from '@/utils/progressGraph.js';
+import { barChartOptions } from '@/utils/barGraph.js'
+import { barSeries } from '@/utils/barGraph.js'
+import { pieChartOptions } from '@/utils/pieGraph.js'
+import { pieSeries } from '@/utils/pieGraph.js'
+import { progressGraphOptions } from '@/utils/progressGraph.js'
 import { progressSeries } from '@/utils/progressGraph.js'
 import { progressMethods } from '@/utils/progressGraph.js'
 import { barMethods } from '@/utils/barGraph.js'
@@ -18,47 +18,45 @@ import { pieMethods } from '@/utils/pieGraph.js'
 </script>
 
 <template>
-    <section 
-        class="w-full max-w-[75rem] mx-auto primary-text px-2 font-display flex-col-ic-js"
+    <section
+        class="w-full max-w-[75rem] mx-auto primary-text px-2 font-display flex-col-ic-js overflow-hidden"
     >
         <section class="grid w-full grid-cols-1 gap-2 mt-8 md:grid-cols-3">
             <TeamList />
-            <Chart 
+            <Chart
                 chart-type="bar"
                 :chart-options="barChartOptions"
                 :chart-series="barSeries"
             />
-            <Chart 
+            <Chart
                 chart-type="pie"
                 :chart-options="pieChartOptions"
                 :chart-series="pieSeries.data"
             />
-            <Chart 
+            <Chart
                 chart-type="radialBar"
                 :chart-options="progressGraphOptions"
                 :chart-series="progressSeries"
             />
             <section class="flex-col-ic-js">
-                <Button 
+                <Button
                     text="Update Progress"
                     @click="progressMethods.update"
                 />
-                <Button 
+                <Button
                     text="Randomize Progress"
                     @click="progressMethods.randomize"
                 />
-                
-                <Button 
+
+                <Button
                     text="Randomize Pie Chart"
                     @click="pieMethods.randomize"
                 />
-                <Button 
+                <Button
                     text="Randomize Bar Chart"
                     @click="barMethods.randomize"
                 />
             </section>
-
-
         </section>
     </section>
 </template>

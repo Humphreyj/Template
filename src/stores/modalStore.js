@@ -1,31 +1,59 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-import { useToggle } from '@vueuse/core'
-
 export const useModalStore = defineStore('modalStore', () => {
-  const showModal = ref(false)
-  const toggleModal = useToggle(showModal)
-  // Array of objects to pass into the Modal component so that it can stay dynamic
-  // This implementation of the modal is in AppHeader to handle the notification dropdown
-  const dropdownModalContent = ref(
-    [
+    const handleModal = (isShowing) => {
+        const showing = ref(isShowing ?? false)
+        const toggle = () => {
+            showing.value = !showing.value
+        }
+        const show = () => {
+            showing.value = true
+        }
+        const hide = () => {
+            showing.value = false
+        }
+
+        return {
+            showing,
+            toggle,
+            show,
+            hide,
+        }
+    }
+
+    const memberSettingsModal = ref(handleModal(false))
+    const notificationModal = ref(handleModal(false))
+
+    // Array of objects to pass into the Modal component so that it can stay dynamic
+    // This implementation of the modal is in AppHeader to handle the notification dropdown
+    const notificationModalContent = ref([
         {
             titleText: 'Messages',
-            content: 'You have 6 new messages'
+            content: 'You have 6 new messages',
         },
         {
             titleText: 'Orders',
-            content: 'There are 3 new orders'
-        }
-      ]
-  )
-  const actions = {
-    toggleModal,
-  }
-  const values = {
-    showModal,
-    dropdownModalContent
-  }
-  return { ...actions, ...values }
+            content: 'There are 3 new orders',
+        },
+    ])
+
+    const changeTeamMember = (member) => {
+        selectedTeamMember.value.name = member.name
+        selectedTeamMember.value.title = member.title
+    }
+    const selectedTeamMember = ref({
+        name: '',
+        title: '',
+    })
+    const actions = {
+        changeTeamMember,
+    }
+    const values = {
+        notificationModalContent,
+        memberSettingsModal,
+        notificationModal,
+        selectedTeamMember,
+    }
+    return { ...actions, ...values }
 })
