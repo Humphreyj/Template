@@ -19,12 +19,13 @@ const props = defineProps({
 })
 
 const userData = ref(props.data)
-// const emit = defineEmits()
+const emit = defineEmits(['handle-submit'])
 
 const handleSubmit = (e) => {
     e.preventDefault()
     let currentDate = new Date()
     userData.value.created_at = currentDate.toISOString()
+    emit('handle-submit', userData.value)
 }
 </script>
 

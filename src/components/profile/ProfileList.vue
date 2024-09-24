@@ -25,9 +25,7 @@ const handleNavigation = async (user) => {
 </script>
 
 <template>
-    <Card
-        container-class="w-11/12 px-2 mx-auto my-2 border-none shadow box-shadow"
-    >
+    <Card container-class="mx-auto my-2 border-none shadow  box-shadow">
         <section class="mt-12 primary-text">
             <header class="px-3 border-b flex-ic-jb h-14">
                 <h4 class="text-xl font-semibold font-display">

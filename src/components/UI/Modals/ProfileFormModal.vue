@@ -18,18 +18,39 @@ const newUser = ref({
 // Pinia
 import { storeToRefs } from 'pinia'
 import { useModalStore } from '@/stores/modalStore'
-const { profileFormModal } = storeToRefs(useModalStore())
+import { useProfileStore } from '@/stores/profileStore'
 
+const { profileFormModal } = storeToRefs(useModalStore())
+const { createNewProfile } = useProfileStore()
+
+const handleCreateProfile = (newProfileData) => {
+    createNewProfile(newProfileData)
+    profileFormModal.value.hide()
+    newUser.value = {
+        name: '',
+        address_line_1: '',
+        city: '',
+        state: '',
+        zip: '',
+        email: '',
+        phone: '',
+        created_at: '',
+    }
+}
 // Utils
 </script>
 
 <template>
     <Modal
-        container-class="absolute h-[44rem] left-1/3 top-10 w-1/2 p-0"
-        backdrop-class="w-screen bg-black opacity-50 "
+        container-class="absolute h-[44rem] md:left-1/3 top-10 w-full md:w-1/2 "
+        backdrop-class="w-screen bg-black opacity-50"
         :show-modal="profileFormModal.showing"
         :toggle-modal="profileFormModal.toggle"
     >
-        <BasicForm form-title="Add User" :data="newUser" />
+        <BasicForm
+            form-title="Add User"
+            :data="newUser"
+            @handle-submit="handleCreateProfile"
+        />
     </Modal>
 </template>
