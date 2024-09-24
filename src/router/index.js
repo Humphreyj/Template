@@ -28,7 +28,7 @@ const routes = [
     {
         path: '/profiles',
         component: ProfilesView,
-        name: 'profiles',
+        name: 'Profiles',
         children: [
             {
                 path: '',
@@ -42,7 +42,7 @@ const routes = [
             },
             {
                 path: 'details/:id',
-                name: 'User Details',
+                name: 'Profile Details',
                 component: () =>
                     import('@/components/profile/ProfileDetails.vue'),
             },

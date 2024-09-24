@@ -16,7 +16,7 @@ const newUser = ref({
 </script>
 
 <template>
-    <div class="w-full">
+    <div class="w-full pt-6">
         <BasicForm :data="newUser" />
     </div>
 </template>

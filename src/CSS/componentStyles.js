@@ -1,4 +1,8 @@
 export const componentStyles = {
+    avatarStyles: {
+        avatarClass:
+            'flex items-center justify-center mx-auto rounded-full shrink-0 ring-1 size-14 ring-gray-cool-300 dark:bg-gray-700',
+    },
     cardStyles: {
         containerClass:
             'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-cardBackgroundDark dark:border-gray-600 ',
@@ -24,8 +28,10 @@ export const componentStyles = {
             'text-lg text-gray-800 dark:text-gray-200 font-display min-w-32 p-1 rounded-md hover:bg-gray-300 hover:dark:bg-gray-500 hover:bg-opacity-70',
     },
     modal: {
-        backdropClass: 'absolute w-screen h-screen z-[5] bg-black opacity-0 -right-16 -top-12',
-        containerClass: 'w-max min-w-40 overflow-x-hidden min-h-30 absolute bg-sidebarBackground dark:bg-sidebarBackgroundDark z-10 rounded-md p-2'
+        backdropClass:
+            'absolute w-screen h-screen z-[5] bg-black opacity-0 -right-16 -top-12',
+        containerClass:
+            'w-max min-w-40 overflow-x-hidden min-h-30 absolute bg-sidebarBackground dark:bg-sidebarBackgroundDark z-10 rounded-md p-2',
     },
     textInput: {
         containerClass: 'flex-col-is-js w-full',

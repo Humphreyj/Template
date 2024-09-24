@@ -70,7 +70,7 @@ export function format(input) {
         },
         address: function () {
             const { address_line_1, city, state, zip } = text
-            let result = `${address_line_1} ${city}, ${state} ${zip}`
+            let result = `${address_line_1} ${city}, ${state.toUpperCase()} ${zip}`
             text = result
             return text
         },

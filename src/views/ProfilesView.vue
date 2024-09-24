@@ -1,24 +1,25 @@
 <script setup>
-import { RouterView, RouterLink } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
+import router from '@/router'
 // Components
-import Card from '@/components/UI/Card.vue'
-import Button from '@/components/UI/Button.vue'
+// Assets
+import { ArrowLeftCircleIcon } from '@heroicons/vue/24/solid'
 // const props = defineProps({})
 // const emit = defineEmits()
+const route = useRoute()
+
+const goBack = () => {
+    router.push({ name: 'Manage Profiles' })
+}
 </script>
 
 <template>
-    <Card
-        container-class="w-11/12 max-w-[75rem] mx-auto primary-text px-2 mt-8 font-display flex-col-ic-js"
-    >
-        <section class="w-full gap-8 py-8 flex-ic-jc primary-text">
-            <RouterLink to="/profiles" class="border-none">
-                <Button text="View List" />
-            </RouterLink>
-            <RouterLink to="/profiles/new" class="border-none">
-                <Button text="New User" />
-            </RouterLink>
-        </section>
-    </Card>
-    <RouterView />
+    <main class="relative">
+        <ArrowLeftCircleIcon
+            v-if="route.name !== 'Manage Profiles'"
+            class="absolute mt-2 left-4 size-8 primary-text"
+            @click="goBack"
+        />
+        <RouterView />
+    </main>
 </template>
