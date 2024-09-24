@@ -7,7 +7,7 @@ export const componentStyles = {
     },
     buttons: {
         defaultButton:
-            'border border-gray-700 rounded-lg bg-primary-500 dark:bg-blue-600 text-white dark:text-gray-100 py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
+            'border border-gray-700 rounded-lg bg-primary-500 dark:bg-primary-600 text-white dark:text-gray-100 py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
         dangerButton:
             'border border-gray-700 rounded-lg bg-red-500 text-white py-1 px-2 shadow drop-shadow hover:shadow-lg hover:drop-shadow-md',
         disabledButton:
