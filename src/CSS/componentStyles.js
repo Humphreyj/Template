@@ -28,10 +28,15 @@ export const componentStyles = {
             'text-lg text-gray-800 dark:text-gray-200 font-display min-w-32 p-1 rounded-md hover:bg-gray-300 hover:dark:bg-gray-500 hover:bg-opacity-70',
     },
     modal: {
-        backdropClass:
-            'absolute w-screen h-screen z-[5] bg-black opacity-0 -right-16 -top-12',
+        backdropClass: 'absolute w-screen h-screen z-[11] cursor-pointer ',
         containerClass:
-            'w-max min-w-40 overflow-x-hidden min-h-30 absolute bg-sidebarBackground dark:bg-sidebarBackgroundDark z-10 rounded-md p-2',
+            'w-max min-w-40 overflow-x-hidden min-h-30 z-[12] absolute bg-sidebarBackground dark:bg-sidebarBackgroundDark rounded-md p-2',
+    },
+    notificationModal: {
+        containerClass:
+            'p-1 mb-2 border-b-2 border-gray-600 dark:border-gray-100 rounded-md cursor-pointer hover:bg-black hover:bg-opacity-20 hover:dark:bg-white hover:dark:bg-opacity-20',
+        iconClass:
+            'absolute top-0 inline-flex items-center justify-center px-1.5 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full -right-1 -top-2',
     },
     textInput: {
         containerClass: 'flex-col-is-js w-full',
