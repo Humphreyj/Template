@@ -2,6 +2,8 @@
 import { computed } from 'vue'
 // Assets
 import imageUpload from '@/assets/imageUpload.svg'
+// Styles
+import { getStyles } from '@/composables/getStyles'
 
 const props = defineProps({
     avatarImg: {
@@ -10,8 +12,7 @@ const props = defineProps({
     },
     avatarClass: {
         type: String,
-        default:
-            'flex items-center justify-center mx-auto rounded-full shrink-0 ring-1 size-14 ring-gray-cool-300 dark:bg-gray-700',
+        default: '',
     },
     avatarAlt: {
         type: String,
@@ -31,10 +32,12 @@ const avatarText = computed(() => {
     result = `${first}${last}`
     return result
 })
+
+const classes = getStyles(props, 'avatarStyles')
 </script>
 
 <template>
-    <section :class="avatarClass">
+    <section :class="classes.avatarClass">
         <img
             v-if="avatarImg"
             :src="avatarImg"
@@ -45,7 +48,7 @@ const avatarText = computed(() => {
             v-else-if="!avatarImg && username"
             data-test="avatar-text"
             class="primary-text flex-ic-jc dark:bg-slate-800"
-            :class="avatarClass"
+            :class="classes.avatarClass"
         >
             {{ avatarText }}
         </h2>

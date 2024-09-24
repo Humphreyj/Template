@@ -1,4 +1,8 @@
 export const componentStyles = {
+    avatarStyles: {
+        avatarClass:
+            'flex items-center justify-center mx-auto rounded-full shrink-0 ring-1 size-14 ring-gray-cool-300 dark:bg-gray-700',
+    },
     cardStyles: {
         containerClass:
             'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full  dark:bg-cardBackgroundDark dark:border-gray-600 ',

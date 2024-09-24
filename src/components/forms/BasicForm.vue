@@ -25,12 +25,11 @@ const handleSubmit = (e) => {
     e.preventDefault()
     let currentDate = new Date()
     userData.value.created_at = currentDate.toISOString()
-    console.log(userData.value)
 }
 </script>
 
 <template>
-    <Card container-class="w-11/12 gap-1 p-4 mx-auto mt-8">
+    <Card container-class="w-11/12 gap-1 p-4 mx-auto min-w-60">
         <section class="w-full gap-1 p-4 mx-auto flex-col-ic-js">
             <h4 class="my-2 title-text">{{ formTitle }}</h4>
             <TextInput

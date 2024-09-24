@@ -4,7 +4,6 @@ import { useModalStore } from '@/stores/modalStore'
 import { storeToRefs } from 'pinia'
 //const { showModal } = storeToRefs(useModalStore())
 
-
 //Props
 const props = defineProps({
     textClass: {
@@ -25,37 +24,32 @@ const props = defineProps({
     },
     modalContent: {
         type: Object,
-        default: {}
+        default: {},
     },
     modalContentClass: {
         type: String,
-        default: ''
+        default: '',
     },
     showModal: {
-        type: Boolean, 
-        
+        type: Boolean,
     },
     toggleModal: {
         type: Function,
-        
-    }
-    
+    },
 })
 // Utils
 import { getStyles } from '@/composables/getStyles'
 const classes = getStyles(props, 'modal')
-
 </script>
 
 <template>
-    <section class="relative">
+    <section v-if="showModal" class="relative">
         <div
-            v-if="showModal"
             id="backdrop"
             :class="classes.backdropClass"
             @click="toggleModal"
         ></div>
-        <section v-if="showModal" :class="classes.containerClass" >
+        <section :class="classes.containerClass">
             <slot></slot>
         </section>
     </section>
