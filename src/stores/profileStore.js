@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 // Mock Data
 import { userProfileMocks } from './mockData'
+import { v4 as uuidv4 } from 'uuid'
 
 export const useProfileStore = defineStore('profiles', () => {
     const selectedUser = ref(null)
@@ -17,7 +18,13 @@ export const useProfileStore = defineStore('profiles', () => {
         selectedUser.value = found
     }
 
+    const createNewProfile = (newUser) => {
+        newUser.id = uuidv4()
+        userProfiles.value.unshift(newUser)
+    }
+
     const actions = {
+        createNewProfile,
         handleUserSelect,
         getProfileById,
     }

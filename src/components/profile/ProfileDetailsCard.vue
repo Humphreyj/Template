@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 // Components
 import Avatar from '@/components/UI/Avatar.vue'
+import Button from '@/components/UI/Button.vue'
 import Card from '@/components/UI/Card.vue'
 import TextBlock from '@/components/UI/TextBlock.vue'
 // Utils
@@ -19,6 +20,7 @@ const props = defineProps({
         },
     },
 })
+const emit = defineEmits(['toggle-editing'])
 const address = ref('')
 onMounted(() => {
     address.value = handleFormat(props.user, 'address')
@@ -26,7 +28,13 @@ onMounted(() => {
 </script>
 
 <template>
-    <Card container-class="w-full py-3 mx-auto md:w-2/3">
+    <Card container-class="relative w-full py-3 mx-auto md:w-2/3">
+        <Button
+            data-test="edit-profile-button"
+            button-class="absolute right-2"
+            text="Edit"
+            @click="emit('toggle-editing')"
+        />
         <section class="w-full gap-2 flex-col-ic-jc">
             <Avatar :username="user.name" avatar-class="text-xl size-20" />
             <TextBlock
