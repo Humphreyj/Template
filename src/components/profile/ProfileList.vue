@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 // Components
 import Avatar from '@/components/UI/Avatar.vue'
 import Card from '@/components/UI/Card.vue'
@@ -10,10 +11,10 @@ import { useModalStore } from '@/stores/modalStore'
 import { ChevronDoubleRightIcon } from '@heroicons/vue/24/solid'
 // Utils
 import router from '../../router'
-import { RouterLink, useRoute } from 'vue-router'
+import { useWindowSize } from '@vueuse/core'
 // const props = defineProps({})
 // const emit = defineEmits()
-const route = useRoute()
+
 const { userProfiles } = storeToRefs(useProfileStore())
 const { handleUserSelect } = useProfileStore()
 const { profileFormModal } = storeToRefs(useModalStore())
@@ -22,22 +23,30 @@ const handleNavigation = async (user) => {
     handleUserSelect(user)
     await router.push({ name: 'Profile Details', params: { id: user.id } })
 }
+const { height } = useWindowSize()
+
+const listContainerHeight = computed(() => height.value * 0.6)
 </script>
 
 <template>
-    <Card container-class="mx-auto my-2 border-none shadow  box-shadow">
-        <section class="mt-12 primary-text">
+    <Card container-class="mx-auto my-2 border-none shadow box-shadow">
+        <section class="px-2 primary-text">
             <header class="px-3 border-b flex-ic-jb h-14">
                 <h4 class="text-xl font-semibold font-display">
                     Manage Profiles
                 </h4>
                 <!-- <RouterLink to="/profiles/new" class="border-none"> -->
-                <h2 @click="profileFormModal.show">Create Profile</h2>
+                <h2
+                    class="border-gray-700 cursor-pointer hover:border-b"
+                    @click="profileFormModal.show"
+                >
+                    Create Profile
+                </h2>
                 <!-- </RouterLink> -->
             </header>
             <div class="w-full gap-2 py-3 flex-col-ic-js">
                 <section
-                    v-for="user in userProfiles.slice(0, 5)"
+                    v-for="user in userProfiles.slice(0, 6)"
                     :key="user.id"
                     class="w-full px-3 py-2 shadow dark:shadow-slate-600 dark:shadow-sm flex-is-jb"
                 >
@@ -51,7 +60,7 @@ const handleNavigation = async (user) => {
                         </div>
 
                         <ChevronDoubleRightIcon
-                            class="cursor-pointer size-8"
+                            class="cursor-pointer size-7"
                             @click="handleNavigation(user)"
                         />
                     </div>

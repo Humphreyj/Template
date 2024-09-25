@@ -14,10 +14,12 @@ const goBack = () => {
 </script>
 
 <template>
-    <main class="relative w-full max-w-[75rem] px-2">
+    <main
+        class="relative w-full max-w-[75rem] mx-auto pt-4 px-2 flex-col-is-js"
+    >
         <ArrowLeftCircleIcon
             v-if="route.name !== 'Manage Profiles'"
-            class="absolute mt-2 cursor-pointer left-4 size-8 primary-text"
+            class="absolute cursor-pointer left-5 size-8 primary-text"
             @click="goBack"
         />
         <RouterView />

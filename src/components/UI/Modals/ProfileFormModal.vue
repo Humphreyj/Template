@@ -42,7 +42,7 @@ const handleCreateProfile = (newProfileData) => {
 
 <template>
     <Modal
-        container-class="absolute h-[44rem] md:left-1/3 top-10 w-full md:w-1/2 "
+        container-class="absolute h-[44rem] md:left-1/3 top-10 w-full md:w-1/2 border-none bg-transparent"
         backdrop-class="w-screen bg-black opacity-50"
         :show-modal="profileFormModal.showing"
         :toggle-modal="profileFormModal.toggle"
