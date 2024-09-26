@@ -7,9 +7,13 @@ const props = defineProps({
         type: String,
         default: '',
     },
-    cardTitleText: {
+    cardTitleClass: {
         type: String,
-        default: 'Card Content',
+        default: '',
+    },
+    cardTitle: {
+        type: String,
+        default: '',
     },
 })
 
@@ -18,10 +22,13 @@ const classes = ref(getStyles(props, 'cardStyles'))
 
 <template>
     <div :class="classes.containerClass">
-        <div class="w-100 ">
-            <slot>
-                <h4 :class="classes.cardTitleText">{{ cardTitleText }}</h4>
-            </slot>
+        <div class="w-full py-2">
+            <header v-if="cardTitle" class="px-2">
+                <h4 :class="classes.cardTitleClass">
+                    {{ cardTitle }}
+                </h4>
+            </header>
+            <slot> </slot>
         </div>
     </div>
 </template>

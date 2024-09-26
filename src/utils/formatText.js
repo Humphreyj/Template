@@ -92,6 +92,9 @@ export const handleFormat = (input, type, showTime) => {
     const formatText = format(input)
     let result
     switch (type) {
+        case 'title':
+            result = formatText.title()
+            break
         case 'phone':
             result = formatText.phone()
             break
