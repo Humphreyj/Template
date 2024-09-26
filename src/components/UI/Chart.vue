@@ -41,6 +41,7 @@ const props = defineProps({
         </Card>
         <MetricCard v-else                 
             metric-title="Progress"
+            :gap-height="chartOptions.chart.height"
         >
             <apexchart
                 class="mt-0 flex-col-ic-jc"

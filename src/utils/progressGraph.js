@@ -57,7 +57,7 @@ export const progressGraphOptions = {
 
     chart: {
         offsetY: -15,
-       
+        height: '150px',
         sparkline: {
             enabled: true
         },
