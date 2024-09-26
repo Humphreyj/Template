@@ -40,13 +40,9 @@ export const useModalStore = defineStore('modalStore', () => {
     ])
 
     const changeTeamMember = (member) => {
-        selectedTeamMember.value.name = member.name
-        selectedTeamMember.value.title = member.title
+        selectedTeamMember.value = member
     }
-    const selectedTeamMember = ref({
-        name: '',
-        title: '',
-    })
+    const selectedTeamMember = ref({})
     const actions = {
         changeTeamMember,
     }

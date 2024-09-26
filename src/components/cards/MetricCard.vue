@@ -52,9 +52,10 @@ const classes = ref(getStyles(props, 'metricCard'))
                     <Cog6ToothIcon class="-mt-1 cursor-pointer size-6" />
                 </slot>
             </div>
-            <p :class="classes.cardContentClass">
+            <p :class="classes.cardContentClass" v-if="metricValue !== 'Metric Value'">
                 {{ handleFormat(metricValue, metricType) }}
             </p>
+            <slot></slot>
             <div class="p-1 text-xs text-white rounded-xl bg-primary-400">
                 Status
             </div>

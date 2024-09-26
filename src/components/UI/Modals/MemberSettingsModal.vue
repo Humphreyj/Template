@@ -12,15 +12,27 @@ const { selectedTeamMember, memberSettingsModal } = storeToRefs(useModalStore())
 
 <template>
     <Modal
-        container-class="inset-80 absolute h-32 w-[20rem]"
+        container-class="absolute h-64 md:w-1/2 sm:w-3/4 md:inset-80 inset-10"
         backdrop-class="w-screen bg-black opacity-50 "
         :show-modal="memberSettingsModal.showing"
         :toggle-modal="memberSettingsModal.toggle"
     >
-        <TextBlock
-            :label="'Name: ' + selectedTeamMember.name"
-            :text-content="'Title: ' + selectedTeamMember.title"
-            container-class=""
+        <TextBlock 
+            label='Name: '
+            :text-content="selectedTeamMember.name"
+            content-class="indent-2"
         />
+        <TextBlock
+            label='Email: '
+            :text-content="selectedTeamMember.email"
+            content-class="indent-2"
+        />
+        <TextBlock label="Phone:" :text-content="selectedTeamMember.phone" content-class="indent-2"/>
+        <TextBlock 
+            label='Address: '
+            :text-content="selectedTeamMember.address_line_1 + ' ' + selectedTeamMember.city + ', ' + selectedTeamMember.state"
+            content-class="indent-2"
+        />
+
     </Modal>
 </template>

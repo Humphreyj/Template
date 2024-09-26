@@ -18,7 +18,7 @@ const classes = ref(getStyles(props, 'cardStyles'))
 
 <template>
     <div :class="classes.containerClass">
-        <div class="w-100 ">
+        <div class="w-100">
             <slot>
                 <h4 :class="classes.cardTitleText">{{ cardTitleText }}</h4>
             </slot>
