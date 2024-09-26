@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, computed, onMounted } from 'vue'
+import { ref, watch, computed, watchEffect } from 'vue'
 import { OnClickOutside } from '@vueuse/components'
 // Components
 import SvgComponent from '@/components/UI/SvgComponent.vue'
@@ -75,7 +75,7 @@ const messages = computed(() => {
     }
     return []
 })
-onMounted(() => {
+watchEffect(() => {
     let found = props.options.find((state) => state.value === props.modelValue)
     if (found) {
         selectedValue.value = found.label
@@ -94,64 +94,59 @@ const classes = ref(getStyles(props, 'textInput'))
             >{{ label }}</label
         >
         <OnClickOutside
-            class="relative w-full mt-2"
+            class="relative w-full mt-1"
             @trigger="showOptions = false"
         >
-            <div class="relative w-full">
-                <input
-                    ref="select-input"
-                    v-bind="$attrs"
-                    v-model="selectedValue"
-                    :class="classes.inputClass"
-                    type="text"
-                    data-test="select-input"
-                    tabindex="0"
-                    @keydown.enter.prevent="toggleOptions"
-                    @click="toggleOptions"
-                />
+            <input
+                ref="select-input"
+                v-bind="$attrs"
+                v-model="selectedValue"
+                :class="classes.inputClass"
+                type="text"
+                data-test="select-input"
+                tabindex="0"
+                @keydown.enter.prevent="toggleOptions"
+                @click="toggleOptions"
+            />
 
-                <SvgComponent
-                    :svg="selectCaret"
-                    class="absolute mt-2 right-2 top-1 dark:text-white"
-                    size="14"
-                />
-                <span v-if="selectedValue">{{ selectedValue.label }}</span>
-                <span
-                    v-else-if="!selectedValue && props.placeholder"
-                    class="text-gray-400 dark:text-gray-600"
-                    >{{ props.placeholder }}</span
-                >
+            <SvgComponent
+                :svg="selectCaret"
+                class="absolute mt-2 right-2 top-1 dark:text-white"
+                size="14"
+            />
+            <span v-if="selectedValue">{{ selectedValue.label }}</span>
+            <span
+                v-else-if="!selectedValue && props.placeholder"
+                class="text-gray-400 dark:text-gray-600"
+                >{{ props.placeholder }}</span
+            >
 
+            <div v-show="`${error ? 'inline-flex' : 'invisible'}`" class="mt-1">
                 <div
-                    v-show="`${error ? 'inline-flex' : 'invisible'}`"
-                    class="mt-1"
+                    v-for="({ $message }, i) in messages"
+                    :key="i"
+                    class="text-xs text-red-700 dark:text-red-400"
                 >
-                    <div
-                        v-for="({ $message }, i) in messages"
-                        :key="i"
-                        class="text-xs text-red-700 dark:text-red-400"
-                    >
-                        {{ $message }}
-                    </div>
+                    {{ $message }}
                 </div>
+            </div>
 
+            <div
+                v-if="showOptions"
+                data-test="select-options"
+                :class="classes.optionsClass"
+            >
                 <div
-                    v-if="showOptions"
-                    data-test="select-options"
-                    :class="classes.optionsClass"
+                    v-for="(option, i) in options"
+                    :key="option.value"
+                    tabindex="0"
+                    :data-test="`select-option-${i}`"
+                    :class="classes.optionClass"
+                    :value="option.value"
+                    @click="setSelected(option)"
+                    @keydown.enter.prevent="setSelected(option)"
                 >
-                    <div
-                        v-for="(option, i) in options"
-                        :key="option.value"
-                        tabindex="0"
-                        :data-test="`select-option-${i}`"
-                        :class="classes.optionClass"
-                        :value="option.value"
-                        @click="setSelected(option)"
-                        @keydown.enter.prevent="setSelected(option)"
-                    >
-                        {{ option.label }}
-                    </div>
+                    {{ option.label }}
                 </div>
             </div>
         </OnClickOutside>

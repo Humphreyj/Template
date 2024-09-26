@@ -13,7 +13,7 @@ const props = defineProps({
         required: true,
     },
 })
-// const emit = defineEmits()
+const emit = defineEmits(['select-order'])
 </script>
 
 <template>
@@ -40,6 +40,7 @@ const props = defineProps({
 
             <EllipsisVerticalIcon
                 class="absolute primary-text size-8 right-2"
+                @click="emit('select-order', order)"
             />
         </div>
     </ListCard>

@@ -10,7 +10,7 @@ import { RouterView } from 'vue-router'
 
 <template>
     <main
-        class="relative w-full max-w-[75rem] primary-text mx-auto pt-8 px-2 flex-col-is-js gap-4"
+        class="relative w-full gap-4 px-2 pt-8 mx-auto primary-text flex-col-is-js"
     >
         <RouterView />
     </main>

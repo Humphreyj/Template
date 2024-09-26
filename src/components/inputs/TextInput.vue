@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, watchEffect } from 'vue'
 import { getStyles } from '@/composables/getStyles'
 // Components
 // Utils
@@ -51,6 +51,11 @@ const handleInput = (e, type) => {
 
 watch(inputValue, (newVal) => {
     inputValue.value = handleFormat(newVal, props.format)
+    emit('update:modelValue', inputValue.value)
+})
+
+watchEffect(() => {
+    inputValue.value = handleFormat(props.modelValue, props.format)
     emit('update:modelValue', inputValue.value)
 })
 </script>
