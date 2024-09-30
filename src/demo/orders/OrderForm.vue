@@ -15,7 +15,12 @@ import states from '@/constants/states'
 //     },
 // })
 const { selectedOrder } = storeToRefs(useOrderStore())
-// const emit = defineEmits()
+const emit = defineEmits(['handle-submit'])
+
+const submitForm = (e) => {
+    e.preventDefault()
+    emit('handle-submit')
+}
 </script>
 
 <template>
@@ -61,7 +66,7 @@ const { selectedOrder } = storeToRefs(useOrderStore())
                     },
                 ]"
             />
-            <Button text="Save" />
+            <Button text="Save" @click="($event) => submitForm($event)" />
         </section>
     </form>
 </template>

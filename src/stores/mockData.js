@@ -115,7 +115,7 @@ export const userProfileMocks = [
 
 export const activeOrderMocks = [
     {
-        id: uuidv4(),
+        id: '6386d208-05da-4b2d-9d7b-3d19135159cf',
         number: 1,
         destination: {
             address_line_1: '30118 Craig Pass',
@@ -132,7 +132,7 @@ export const activeOrderMocks = [
         order_total: 1523,
     },
     {
-        id: uuidv4(),
+        id: '6386d208-05da-4b2d-9d7b-3d1913515944',
         number: 2,
         destination: {
             address_line_1: '9921 Prairie Hollow',
@@ -149,7 +149,7 @@ export const activeOrderMocks = [
         order_total: 2345,
     },
     {
-        id: uuidv4(),
+        id: '6386d208-05da-4b2d-9d7b-3d1913515sce',
         number: 3,
         destination: {
             address_line_1: '4389 Bridge Avenue',
@@ -166,7 +166,7 @@ export const activeOrderMocks = [
         order_total: 978,
     },
     {
-        id: uuidv4(),
+        id: '6386d208-05da-4b2d-9d7b-3d19135159ff',
         number: 4,
         destination: {
             address_line_1: '1104 North Oaks',
@@ -183,7 +183,7 @@ export const activeOrderMocks = [
         order_total: 1450,
     },
     {
-        id: uuidv4(),
+        id: '6386d208-05da-4b2d-9d7b-3d19135153dv',
         number: 5,
         destination: {
             address_line_1: '2234 Valley View',
@@ -200,7 +200,7 @@ export const activeOrderMocks = [
         order_total: 1875,
     },
     {
-        id: uuidv4(),
+        id: '6386d208-05da-4b2d-9d7b-3d19135159fq',
         number: 6,
         destination: {
             address_line_1: '5521 Oak Street',

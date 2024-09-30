@@ -33,6 +33,15 @@
     .flex-col-ic-js {
         @apply flex flex-col items-center justify-start;
     }
+    .flex-col-ic-je {
+        @apply flex flex-col items-center justify-end;
+    }
+    .flex-col-is-je {
+        @apply flex flex-col items-start justify-end;
+    }
+    .flex-col-ie-js {
+        @apply flex flex-col items-end justify-start;
+    }
     .flex-col-is-jc {
         @apply flex flex-col items-start justify-center;
     }
