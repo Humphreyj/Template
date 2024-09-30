@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 export const userProfileMocks = [
     {
         id: 'c847868d-dffb-4d1e-a385-74dd578c46a7',
@@ -108,5 +110,110 @@ export const userProfileMocks = [
         email: 'ppeck@gentry.com',
         phone: '001-225-722-6113',
         created_at: '2024-09-23T19:28:48.447051',
+    },
+]
+
+export const activeOrderMocks = [
+    {
+        id: uuidv4(),
+        number: 1,
+        destination: {
+            address_line_1: '30118 Craig Pass',
+            city: 'Davisside',
+            state: 'ga',
+            zip: '61714',
+        },
+        courier: {
+            name: 'Ima Courier',
+            profile_image: 'https://thispersondoesnotexist.com/',
+        },
+        scheduled_delivery: '2024-09-23T19:28:48.439381',
+        status: 'in_transit',
+        order_total: 1523,
+    },
+    {
+        id: uuidv4(),
+        number: 2,
+        destination: {
+            address_line_1: '9921 Prairie Hollow',
+            city: 'East Zaneside',
+            state: 'tx',
+            zip: '75421',
+        },
+        courier: {
+            name: 'John Doe',
+            profile_image: 'https://thispersondoesnotexist.com/',
+        },
+        scheduled_delivery: '2024-09-25T15:45:32.124381',
+        status: 'out_for_delivery',
+        order_total: 2345,
+    },
+    {
+        id: uuidv4(),
+        number: 3,
+        destination: {
+            address_line_1: '4389 Bridge Avenue',
+            city: 'South Julian',
+            state: 'ca',
+            zip: '92104',
+        },
+        courier: {
+            name: 'Jane Smith',
+            profile_image: 'https://thispersondoesnotexist.com/',
+        },
+        scheduled_delivery: '2024-09-26T12:22:14.237845',
+        status: 'delivered',
+        order_total: 978,
+    },
+    {
+        id: uuidv4(),
+        number: 4,
+        destination: {
+            address_line_1: '1104 North Oaks',
+            city: 'Westport',
+            state: 'ny',
+            zip: '12993',
+        },
+        courier: {
+            name: 'Michael Courier',
+            profile_image: 'https://thispersondoesnotexist.com/',
+        },
+        scheduled_delivery: '2024-09-27T10:15:05.549826',
+        status: 'pending',
+        order_total: 1450,
+    },
+    {
+        id: uuidv4(),
+        number: 5,
+        destination: {
+            address_line_1: '2234 Valley View',
+            city: 'Clearwater',
+            state: 'fl',
+            zip: '33756',
+        },
+        courier: {
+            name: 'Linda Brown',
+            profile_image: 'https://thispersondoesnotexist.com/',
+        },
+        scheduled_delivery: '2024-09-29T09:30:45.381923',
+        status: 'in_transit',
+        order_total: 1875,
+    },
+    {
+        id: uuidv4(),
+        number: 6,
+        destination: {
+            address_line_1: '5521 Oak Street',
+            city: 'Greenhill',
+            state: 'or',
+            zip: '97403',
+        },
+        courier: {
+            name: 'Sam Delivery',
+            profile_image: 'https://thispersondoesnotexist.com/',
+        },
+        scheduled_delivery: '2024-09-30T14:55:30.293746',
+        status: 'out_for_delivery',
+        order_total: 2100,
     },
 ]

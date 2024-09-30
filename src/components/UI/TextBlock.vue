@@ -12,20 +12,19 @@ const props = defineProps({
         default: 'Text Content',
     },
     labelClass: {
-        type: String, 
-        default: ''
+        type: String,
+        default: '',
     },
     contentClass: {
-        type: String, 
-        default: ''
+        type: String,
+        default: '',
     },
     containerClass: {
         type: String,
-        default: ''
-    }
+        default: '',
+    },
 })
 const classes = ref(getStyles(props, 'textBlock'))
-
 </script>
 
 <template>
@@ -33,8 +32,10 @@ const classes = ref(getStyles(props, 'textBlock'))
         <p :class="classes.labelClass" v-if="label">
             {{ label }}
         </p>
-        <div class="min-h-6">
-            <p :class="classes.contentClass">{{ textContent }}</p>
-        </div>
+        <slot>
+            <div class="min-h-6">
+                <p :class="classes.contentClass">{{ textContent }}</p>
+            </div>
+        </slot>
     </div>
 </template>
