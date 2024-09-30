@@ -5,6 +5,7 @@ import { useDark, useToggle, useWindowSize } from '@vueuse/core'
 // Components
 import Button from '@/components/UI/Button.vue'
 import NotificationModal from '@/components/UI/Modals/NotificationModal.vue'
+import Avatar from '@/components/UI/Avatar.vue'
 // Pinia
 import { storeToRefs } from 'pinia'
 import { usePrimaryStore } from '@/stores/primaryStore'
@@ -38,13 +39,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="p-2 border-b border-gray-600 shadow-md flex-ic-jb ">
+    <section class="p-2 border-b border-gray-600 shadow-md flex-ie-jend ">
         <h3 class="w-full text-xl font-bold primary-text md:hidden">
             New Client
         </h3>
-        <div class="w-full gap-1 flex-ic-jend">
+        <div class="gap-2 flex-ie-jend">
             <Button v-if="width < 768" @click="toggleSidebar()" text="Bar" />
             <NotificationModal />
+            <Avatar avatar-class="size-10"/>
             <Button
                 @click="toggleDark()"
                 :text="isDark ? '&#9788;' : '&#9789;'"

@@ -40,6 +40,11 @@ watch(
                             colors: ['#ffffff'],
                         },
                     },
+                    title: {
+                        style: {
+                            color: '#ffffff'
+                        }
+                    }
                 },
                 false,
                 true
@@ -72,6 +77,11 @@ watch(
                             colors: ['#000000'],
                         },
                     },
+                    title: {
+                        style: {
+                            color: '#000000'
+                        }
+                    }
                 },
                 false,
                 true
@@ -83,6 +93,10 @@ watch(
 export const barChartOptions = {
     chart: {
         id: 'barChart', // or use a dynamic value if needed
+        height: 'auto',
+        sparkline: {
+            enabled: false
+        }
     },
     xaxis: {
         categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
@@ -104,6 +118,12 @@ export const barChartOptions = {
         style: {
             colors: [textColor],
         },
+    },
+    title: {
+        text: 'Fiction Books Sales',
+        style: {
+            color: textColor
+        }
     },
 }
 export const barSeries = [

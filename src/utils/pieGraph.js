@@ -51,8 +51,7 @@ watch(
 export const pieChartOptions = {
     
     chart: {
-        width: 400,
-        
+        height: 300,
         type: 'pie',
         id: 'pieChart',
     },

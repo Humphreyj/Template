@@ -17,6 +17,9 @@ import { storeToRefs } from 'pinia'
 const { changeTeamMember } = useModalStore();
 const {memberSettingsModal} = storeToRefs(useModalStore())
 
+// Data
+import { userProfileMocks } from '@/stores/mockData'
+
 const props = defineProps({
     containerClass: {
         type: String,
@@ -29,25 +32,7 @@ const props = defineProps({
 }) 
 
 const title = 'Team List'
-const team = [
-    {
-        name: 'Dill',
-        title: 'Dumbass',
-        img: "https://fastly.picsum.photos/id/832/200/200.jpg?hmac=V4CRQyK7KVP2wBYsEhpcpP8wSdwyU5c-yTeMm37uOOo",
-    },
-    {
-        name: 'Pickle Man',
-        title: 'Trash Annihalator',
-        img: ""
-    },
-    {
-        name: '',
-        title: 'Goblin',
-        img: ""
 
-    },
-    
-]
 const openModal = (member) => {
     changeTeamMember(member)
     // toggleSettingsModal()
@@ -63,14 +48,14 @@ const classes = getStyles(props, 'textBlock')
                     :text-content="title" 
                     content-class="text-2xl font-bold text-left"
                 />
-                <section class="flex flex-row items-center h-20 gap-3" v-for="member in team">
+                <section class="flex flex-row items-center h-20 gap-3" v-for="member in userProfileMocks">
                     <Avatar 
                         :username="member.name"
                         :avatar-img="member.img"
                     />
                     <TextBlock
                         :label="member.name"
-                        :text-content="member.title"
+                        :text-content="member.email"
                         label-class="font-bold text-left text-black-600 opacity-1"
                         content-class="text-xs"
                     />

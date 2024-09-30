@@ -8,7 +8,6 @@ watch(
         if(value){
             ApexCharts.exec('progressBar', 'updateOptions', {
                 title: {
-                    text: 'Progress',
                     style: {
                         color: "#ffffff"
                     }
@@ -19,10 +18,8 @@ watch(
                             name: {
                                 show: true,
                                 color: "#ffffff",
-                                offsetY: 20
                             },
                             value: {
-                                offsetY: -20,
                                 fontSize: '22px',
                                 color: "#ffffff"
                             },
@@ -34,7 +31,6 @@ watch(
         } else {
             ApexCharts.exec('progressBar', 'updateOptions', {
                 title: {
-                    text: 'Progress',
                     style: {
                         color: "#000000"
                     }
@@ -45,10 +41,8 @@ watch(
                             name: {
                                 show: true,
                                 color: "#000000",
-                                offsetY: 20
                             },
                             value: {
-                                offsetY: -20,
                                 fontSize: '22px',
                                 color: "#000000"
                             },
@@ -62,18 +56,14 @@ watch(
 export const progressGraphOptions = {
 
     chart: {
-        offsetY: -40,
+        offsetY: -15,
+        height: '150px',
         sparkline: {
             enabled: true
         },
         id: 'progressBar'
     },
-    title: {
-        text: 'Progress',
-        style: {
-            color: textColor
-        }
-    },
+    
     plotOptions: {
         radialBar: {
         startAngle: -90,
@@ -107,7 +97,7 @@ export const progressGraphOptions = {
     },
     grid: {
         padding: {
-        top: -10
+            top: -10
         }
     },
     fill: {

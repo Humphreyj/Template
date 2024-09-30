@@ -9,7 +9,7 @@ import { messages } from '@/demo/data/demoData'
 </script>
 
 <template>
-    <Card container-class="my-2 shadow box-shadow px-2 border-none">
+    <Card container-class="px-2 my-2 border-none shadow box-shadow h-fit">
         <section>
             <header class="px-3 border-b flex-ic-jb h-14">
                 <h4 class="text-xl font-semibold font-display">
