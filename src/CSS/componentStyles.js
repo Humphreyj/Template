@@ -5,7 +5,7 @@ export const componentStyles = {
     },
     cardStyles: {
         containerClass:
-            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full min-h-36 max-h-80 dark:bg-cardBackgroundDark dark:border-gray-600 ',
+            'border bg-white rounded-lg border-gray-300 shadow shadow-gray w-full min-h-36 dark:bg-cardBackgroundDark dark:border-gray-600 ',
         cardTitleText: 'w-fit text-2xl dark:text-white',
         cardContentText: '',
     },
@@ -21,7 +21,7 @@ export const componentStyles = {
         backdropClass:
             'absolute w-screen h-screen md:hidden z-[5] bg-black opacity-45',
         containerClass:
-            'w-max min-w-40 overflow-x-hidden h-screen absolute md:relative bg-sidebarBackground dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r',
+            'min-w-40 overflow-x-hidden min-h-screen h-full absolute md:relative bg-sidebarBackground dark:bg-sidebarBackgroundDark py-3 px-2 z-10 border-r',
         titleClass: 'primary-text font-bold font-display text-xl mb-4',
         navContainerClass: 'flex-col-is-js gap-2',
         navLinkClass:
