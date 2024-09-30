@@ -29,7 +29,7 @@ const props = defineProps({
 
 <template>
     <section class="w-100 h-fit">
-        <Card v-if="chartType !== 'radialBar'" class="max-h-80">
+        <Card v-if="chartType !== 'radialBar'">
             <apexchart
                 class="mt-4 flex-col-ic-jc"
                 :type="chartType"
