@@ -24,11 +24,14 @@ const emit = defineEmits(['select-order'])
         >
             <p class="font-bold w-min">{{ order.number }}</p>
             <p class="w-11/12">
-                {{ handleFormat(order.destination, 'address') }}
+                {{
+                    `${
+                        order.destination.city
+                    }, ${order.destination.state.toUpperCase()}`
+                }}
             </p>
             <div class="gap-1 flex-ic-js w-max">
                 <Avatar :username="order.courier.name" avatar-class="size-8" />
-                <p>{{ order.courier.name }}</p>
             </div>
             <p>
                 {{ handleFormat(order.scheduled_delivery, 'date') }}
@@ -39,7 +42,7 @@ const emit = defineEmits(['select-order'])
             </p>
 
             <EllipsisVerticalIcon
-                class="absolute primary-text size-8 right-2"
+                class="absolute right-0 -translate-x-2 primary-text size-8"
                 @click="emit('select-order', order)"
             />
         </div>

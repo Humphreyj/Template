@@ -145,7 +145,7 @@ export const activeOrderMocks = [
             profile_image: 'https://thispersondoesnotexist.com/',
         },
         scheduled_delivery: '2024-09-25T15:45:32.124381',
-        status: 'out_for_delivery',
+        status: 'delivery',
         order_total: 2345,
     },
     {
@@ -213,7 +213,7 @@ export const activeOrderMocks = [
             profile_image: 'https://thispersondoesnotexist.com/',
         },
         scheduled_delivery: '2024-09-30T14:55:30.293746',
-        status: 'out_for_delivery',
+        status: 'delivery',
         order_total: 2100,
     },
 ]

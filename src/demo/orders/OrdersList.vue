@@ -9,6 +9,7 @@ import { storeToRefs } from 'pinia'
 import { useOrderStore } from '@/stores/ordersStore'
 // Assets
 // Utils
+import { OnClickOutside } from '@vueuse/components'
 
 // const props = defineProps({})
 // const emit = defineEmits()
@@ -17,19 +18,21 @@ const { handleOrderSelect } = useOrderStore()
 
 const selectOrder = (order) => {
     selectOrder.value = null
+
     handleOrderSelect(order)
 }
 </script>
 
 <template>
-    <main
+    <OnClickOutside
+        @trigger="selectOrder(null)"
         class="relative grid w-full gap-4 px-2 pt-8 mx-auto md:grid-cols-3 primary-text"
     >
         <Card card-title="Active Orders" container-class="md:col-span-2">
             <header
-                class="relative font-medium text-xl py-2 mb-2 items-center font-display w-full grid-cols-[0.5fr_1.5fr_1fr_1fr_1fr_1fr] px-2 hidden md:grid"
+                class="relative items-center hidden w-full grid-cols-[0.5fr_1.5fr_1fr_1fr_1fr_1fr] px-2 py-2 mb-2 text-xl font-medium font-display md:grid"
             >
-                <p>Order</p>
+                <p>Id</p>
                 <p>Destination</p>
                 <p>Courier</p>
                 <p>Date</p>
@@ -64,5 +67,5 @@ const selectOrder = (order) => {
                 </h3>
             </section>
         </Card>
-    </main>
+    </OnClickOutside>
 </template>

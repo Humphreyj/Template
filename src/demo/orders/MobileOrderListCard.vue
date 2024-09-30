@@ -2,7 +2,7 @@
 // Components
 import ListCard from '@/components/UI/ListCard.vue'
 import TextBlock from '@/components/UI/TextBlock.vue'
-import Avatar from '@/components/UI/Avatar.vue'
+
 // Assets
 
 // Utils
@@ -39,17 +39,9 @@ const props = defineProps({
             <div class="w-full gap-1 flex-is-js">
                 <TextBlock
                     label="Courier"
-                    :text-content="handleFormat(order.destination, 'address')"
+                    :text-content="order.courier.name"
                     label-class="font-bold text-left text-black-600 opacity-1"
-                >
-                    <div class="gap-1 flex-ic-js">
-                        <Avatar
-                            :username="order.courier.name"
-                            avatar-class="size-8"
-                        />
-                        <p class="font-semibold">{{ order.courier.name }}</p>
-                    </div>
-                </TextBlock>
+                />
                 <TextBlock
                     label="Destination"
                     :text-content="handleFormat(order.destination, 'address')"
