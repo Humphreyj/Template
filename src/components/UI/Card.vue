@@ -18,10 +18,13 @@ const classes = ref(getStyles(props, 'cardStyles'))
 
 <template>
     <div :class="classes.containerClass">
-        <div class="w-100">
-            <slot>
-                <h4 :class="classes.cardTitleText">{{ cardTitleText }}</h4>
-            </slot>
+        <div class="w-full">
+            <header v-if="cardTitle" class="px-2">
+                <h4 :class="classes.cardTitleClass">
+                    {{ cardTitle }}
+                </h4>
+            </header>
+            <slot> </slot>
         </div>
     </div>
 </template>
