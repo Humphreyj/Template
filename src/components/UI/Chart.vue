@@ -2,6 +2,7 @@
 
 // Components
 import Card from '@/components/UI/Card.vue'
+import MetricCard from '@/components/cards/MetricCard.vue';
 const props = defineProps({
     containerClass: {
         type: String,
@@ -27,16 +28,30 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="w-100">
-        <Card>
+    <section class="w-100 h-fit">
+        <Card v-if="chartType !== 'radialBar'">
             <apexchart
-                class="w-full h-72 flex-col-ic-jc"
+                class="mt-4 flex-col-ic-jc"
                 :type="chartType"
                 :options="chartOptions"
                 :series="chartSeries"
+                :height="chartOptions.chart.height"
             >
             </apexchart>
         </Card>
+        <MetricCard v-else                 
+            metric-title="Progress"
+            :gap-height="chartOptions.chart.height"
+        >
+            <apexchart
+                class="mt-0 flex-col-ic-jc"
+                :type="chartType"
+                :options="chartOptions"
+                :series="chartSeries"
+                :height="chartOptions.chart.height"
+            >
+            </apexchart>
+        </MetricCard>
     </section>
 </template>
 
