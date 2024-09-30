@@ -14,7 +14,7 @@ const emit = defineEmits(['toggle-editing'])
 </script>
 
 <template>
-    <main class="w-full gap-3 p-2 mx-auto border flex-col-ic-js">
+    <main class="w-full gap-3 p-2 mx-auto flex-col-ic-js">
         <div class="w-full flex-ic-jb">
             <h4 data-test="selected-order-number" class="title-text">
                 Order # {{ selectedOrder.number }}
