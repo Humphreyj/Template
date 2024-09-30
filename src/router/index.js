@@ -29,6 +29,18 @@ const routes = [
         path: '/orders',
         component: () => import('@/views/OrdersView.vue'),
         name: 'Orders',
+        children: [
+            {
+                path: '',
+                name: 'Manage Orders',
+                component: () => import('@/demo/orders/OrdersList.vue'),
+            },
+            {
+                path: 'details/:id',
+                name: 'Order Details',
+                component: () => import('@/demo/orders/OrderDetails.vue'),
+            },
+        ],
     },
     {
         path: '/profiles',

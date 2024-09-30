@@ -9,8 +9,8 @@ export const useOrderStore = defineStore('orders', () => {
     const selectedOrder = ref(null)
     const activeOrders = ref(activeOrderMocks)
 
-    const handleOrderSelect = (user) => {
-        selectedOrder.value = user
+    const handleOrderSelect = (order) => {
+        selectedOrder.value = order
     }
 
     const getOrderById = (id) => {

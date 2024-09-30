@@ -8,7 +8,7 @@ const props = defineProps({
         default: null,
     },
     textContent: {
-        type: String,
+        type: [String, Number],
         default: 'Text Content',
     },
     labelClass: {
