@@ -18,7 +18,7 @@ const classes = ref(getStyles(props, 'cardStyles'))
 
 <template>
     <div :class="classes.containerClass">
-        <div class="w-full">
+        <div class="w-full py-2">
             <header v-if="cardTitle" class="px-2">
                 <h4 :class="classes.cardTitleClass">
                     {{ cardTitle }}
