@@ -28,10 +28,10 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="w-100 h-fit">
-        <Card v-if="chartType !== 'radialBar'">
+    <section class="w-100">
+        <Card v-if="chartType !== 'radialBar'" class="lg:min-h-96 xl:max-h-96 md:min-h-80">
             <apexchart
-                class="mt-4 flex-col-ic-jc"
+                class="flex-col-ic-jc h-fit"
                 :type="chartType"
                 :options="chartOptions"
                 :series="chartSeries"
