@@ -1,10 +1,9 @@
 <script setup>
 import { getStyles } from '@/composables/getStyles'
-
+import router from '@/router'
 // Components
 import Modal from '@/components/UI/Modal.vue'
 import TextBlock from '@/components/UI/TextBlock.vue'
-import Button from '@/components/UI/Button.vue'
 
 // Pinia
 import { storeToRefs } from 'pinia'
@@ -12,7 +11,7 @@ import { useModalStore } from '@/stores/modalStore'
 
 // Modal Store
 
-const { notificationModalContent, notificationModal } = storeToRefs(
+const { avatarModalContent, avatarModal } = storeToRefs(
     useModalStore()
 )
 
@@ -22,29 +21,31 @@ const props = defineProps({
         type: String,
         default: '',
     },
-    iconClass: {
-        type: String,
-        default: '',
-    },
 })
 // Utils
 const classes = getStyles(props, 'notificationModal')
+
+// Have this hard coded for now as a proof of concept
+const handleNav = (path) => {
+    console.log(path)
+    router.push('/profiles/details/c847868d-dffb-4d1e-a385-74dd578c46a7')
+    
+}
 </script>
 
 <template>
     <div class="relative">
-        
         <Modal
-            container-class="right-24 top-12"
+            container-class="right-12 top-12"
             backdrop-class="w-screen"
-            :show-modal="notificationModal.showing"
-            :toggle-modal="notificationModal.toggle"
+            :show-modal="avatarModal.showing"
+            :toggle-modal="avatarModal.toggle"
         >
             <TextBlock
-                v-for="item in notificationModalContent"
-                :label="item.titleText"
+                v-for="item in avatarModalContent"
                 :text-content="item.content"
                 :container-class="classes.containerClass"
+                @click="handleNav(item.content)"
             />
         </Modal>
     </div>

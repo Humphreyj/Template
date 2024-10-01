@@ -25,6 +25,7 @@ export const useModalStore = defineStore('modalStore', () => {
     const memberSettingsModal = ref(handleModal(false))
     const notificationModal = ref(handleModal(false))
     const profileFormModal = ref(handleModal(false))
+    const avatarModal = ref(handleModal(false))
 
     // Array of objects to pass into the Modal component so that it can stay dynamic
     // This implementation of the modal is in AppHeader to handle the notification dropdown
@@ -38,6 +39,20 @@ export const useModalStore = defineStore('modalStore', () => {
             content: 'There are 3 new orders',
         },
     ])
+    const avatarModalContent = ref([
+        {
+            content: 'Profile'
+        },
+        {
+            content: 'Settings'
+        },
+        {
+            content: 'Inbox'
+        },
+        {
+            content: 'Logout'
+        }
+    ])
 
     const changeTeamMember = (member) => {
         selectedTeamMember.value = member
@@ -48,10 +63,13 @@ export const useModalStore = defineStore('modalStore', () => {
     }
     const values = {
         notificationModalContent,
+        avatarModalContent,
         memberSettingsModal,
         notificationModal,
         profileFormModal,
+        avatarModal,
         selectedTeamMember,
+
     }
     return { ...actions, ...values }
 })

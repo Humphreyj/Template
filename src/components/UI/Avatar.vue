@@ -34,6 +34,14 @@ const avatarText = computed(() => {
 })
 
 const classes = getStyles(props, 'avatarStyles')
+import { storeToRefs } from 'pinia'
+import { useModalStore } from '@/stores/modalStore'
+
+// Modal Store
+
+const { avatarModalContent, avatarModal } = storeToRefs(
+    useModalStore()
+)
 </script>
 
 <template>
@@ -42,7 +50,7 @@ const classes = getStyles(props, 'avatarStyles')
             v-if="avatarImg"
             :src="avatarImg"
             :alt="avatarAlt"
-            class="w-full h-full rounded-full"
+            :class="['w-full', 'h-full', 'rounded-full', avatarModal.showing ? 'rounded-none' : '',]"
         />
         <h2
             v-else-if="!avatarImg && username"
