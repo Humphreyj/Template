@@ -36,7 +36,7 @@ export const componentStyles = {
         containerClass:
             'p-1 mb-2 border-b-2 border-gray-600 dark:border-gray-100 rounded-md cursor-pointer hover:bg-black hover:bg-opacity-20 hover:dark:bg-white hover:dark:bg-opacity-20',
         iconClass:
-            'absolute top-0 inline-flex items-center justify-center px-1.5 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full right-[5.5rem] top-1',
+            'absolute top-0 inline-flex items-center justify-center px-1.5 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full -right-1 -top-2',
     },
     textInput: {
         containerClass: 'flex-col-is-js w-full',

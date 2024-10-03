@@ -62,7 +62,7 @@ const classes = getStyles(props, 'notificationModal')
         </h3>
         <div class="gap-2 flex-ie-jend">
             <Button v-if="width < 768" @click="toggleSidebar()" text="Bar" />
-            <section>
+            <section class="relative">
                 <Button text="&#128276;" @click="notificationModal.show" />
                 <span
                     v-if="notificationModalContent.length > 0"
