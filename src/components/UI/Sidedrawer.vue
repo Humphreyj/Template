@@ -6,6 +6,7 @@ import { useWindowSize } from '@vueuse/core'
 
 // Pinia
 import { usePrimaryStore } from '@/stores/primaryStore'
+import { useRuntimeStore } from '@/stores/runtimeStore'
 // Utils
 import { getStyles } from '@/composables/getStyles'
 const props = defineProps({
@@ -34,6 +35,9 @@ const props = defineProps({
         default: '',
     },
 })
+
+const { configOptions } = storeToRefs(useRuntimeStore())
+
 const { showSidebar } = storeToRefs(usePrimaryStore())
 const { toggleSidebar } = usePrimaryStore()
 const { width } = useWindowSize()
@@ -51,7 +55,7 @@ const classes = getStyles(props, 'sidebar')
 
 <template>
     <transition name="fade">
-        <section >
+        <section>
             <div
                 v-if="showSidebar"
                 id="backdrop"
@@ -60,7 +64,9 @@ const classes = getStyles(props, 'sidebar')
             ></div>
 
             <section v-if="showSidebar" :class="classes.containerClass">
-                <h3 :class="classes.titleClass">New Client</h3>
+                <h3 :class="classes.titleClass">
+                    {{ configOptions.clientName }}
+                </h3>
                 <div :class="classes.navContainerClass">
                     <RouterLink
                         to="/"

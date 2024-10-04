@@ -9,6 +9,7 @@ import Avatar from '@/components/UI/Avatar.vue'
 // Pinia
 import { storeToRefs } from 'pinia'
 import { usePrimaryStore } from '@/stores/primaryStore'
+import { useRuntimeStore } from '@/stores/runtimeStore'
 const props = defineProps({
     textClass: {
         type: String,
@@ -28,6 +29,7 @@ const toggleDark = useToggle(isDark)
 const { showSidebar } = storeToRefs(usePrimaryStore())
 const { toggleSidebar } = usePrimaryStore()
 const { width } = useWindowSize()
+const { clientName, configOptions } = storeToRefs(useRuntimeStore())
 
 watch(width, (newWidth) => {
     if (newWidth > 768) {
@@ -46,9 +48,7 @@ onMounted(() => {
 })
 
 import { useModalStore } from '@/stores/modalStore'
-const { avatarModal } = storeToRefs(
-    useModalStore()
-)
+const { avatarModal } = storeToRefs(useModalStore())
 const { notificationModalContent, notificationModal } = storeToRefs(
     useModalStore()
 )
@@ -56,9 +56,9 @@ const classes = getStyles(props, 'notificationModal')
 </script>
 
 <template>
-    <section class="p-2 border-b border-gray-600 shadow-md flex-ie-jend ">
+    <section class="p-2 border-b border-gray-600 shadow-md flex-ie-jend">
         <h3 class="w-full text-xl font-bold primary-text md:hidden">
-            New Client
+            {{ configOptions.clientName }}
         </h3>
         <div class="gap-2 flex-ie-jend">
             <Button v-if="width < 768" @click="toggleSidebar()" text="Bar" />
@@ -71,7 +71,8 @@ const classes = getStyles(props, 'notificationModal')
                     {{ notificationModalContent.length }}
                 </span>
             </section>
-            <Avatar avatar-class="cursor-pointer size-10" 
+            <Avatar
+                avatar-class="cursor-pointer size-10"
                 @click="avatarModal.toggle"
             />
             <Button
@@ -79,6 +80,5 @@ const classes = getStyles(props, 'notificationModal')
                 :text="isDark ? '&#9788;' : '&#9789;'"
             />
         </div>
-        
     </section>
 </template>
