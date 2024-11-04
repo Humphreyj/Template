@@ -1,8 +1,7 @@
 <script setup>
 // Components
 import TeamList from '@/components/UI/TeamList.vue'
-import Chart from '@/components/UI/Chart.vue'
-import Button from '@/components/UI/Button.vue'
+import TasksList from '@/components/UI/TasksList.vue';
 
 
 </script>
@@ -15,7 +14,7 @@ import Button from '@/components/UI/Button.vue'
         <section class="grid w-full h-full grid-cols-1 gap-2 mt-1 md:grid-cols-2">
            
             <TeamList />
-           
+            <TasksList />
         
         </section>
     </section>

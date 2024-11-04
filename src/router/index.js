@@ -1,14 +1,47 @@
+/* 
+I want to have a login page, but instead of inputs for credentials just two buttons, Login Admin 
+and Login Client. 
+
+The base route will need to be that login component, and the admin login will route to the current dashboard, 
+the client one doesnt exist yet, so that should route to a placeholder.
+
+*/
+
+
+
 import { createWebHistory, createRouter } from 'vue-router'
 
 import HomeView from '@/views/HomeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
 import ProfilesView from '@/views/ProfilesView.vue'
+import DashboardView from '@/views/DashboardView.vue'
+import ClientView from '@/views/ClientView.vue'
 
 const routes = [
     {
         path: '/',
         component: HomeView,
         name: 'Home',
+        meta: {
+            transition: 'fade',
+            order: 0,
+            viewLoaded: false,
+        },
+    },
+    {
+        path: '/dashboard',
+        component: DashboardView,
+        name: 'Dash',
+        meta: {
+            transition: 'fade',
+            order: 0,
+            viewLoaded: false,
+        },
+    },
+    {
+        path: '/Client',
+        component: ClientView,
+        name: 'Client',
         meta: {
             transition: 'fade',
             order: 0,
