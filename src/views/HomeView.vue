@@ -1,9 +1,9 @@
 <script setup>
 // Components
+
 import MetricCard from '@/components/cards/MetricCard.vue'
 import Card from '@/components/UI/Card.vue'
 import Chart from '@/components/UI/Chart.vue'
-
 
 // Chart Data/Methods
 import { barChartOptions } from '@/utils/barGraph.js'
@@ -12,11 +12,6 @@ import { pieChartOptions } from '@/utils/pieGraph.js'
 import { pieSeries } from '@/utils/pieGraph.js'
 import { progressGraphOptions } from '@/utils/progressGraph.js'
 import { progressSeries } from '@/utils/progressGraph.js'
-
-
-import { progressMethods } from '@/utils/progressGraph.js'
-import { barMethods } from '@/utils/barGraph.js'
-import { pieMethods } from '@/utils/pieGraph.js'
 
 import MessagesList from '@/demo/MessagesList.vue'
 // Pinia
@@ -46,14 +41,12 @@ import MessagesList from '@/demo/MessagesList.vue'
                 :metric-value="1245"
                 metric-type="number"
             />
-            
+
             <Chart
                 chart-type="radialBar"
                 :chart-options="progressGraphOptions"
                 :chart-series="progressSeries"
             />
-            
-            
         </section>
         <section class="grid w-full grid-cols-1 gap-2 mt-3 md:grid-cols-2">
             <Chart

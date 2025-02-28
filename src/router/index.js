@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
 import ProfilesView from '@/views/ProfilesView.vue'
+import ProgressBarTestView from '@/views/ProgressBarTestView.vue'
 
 const routes = [
     {
@@ -15,6 +16,12 @@ const routes = [
             viewLoaded: false,
         },
     },
+    {
+        path: '/test',
+        component: ProgressBarTestView,
+        name: 'ProgressBarTest',
+    },
+
     {
         path: '/projects',
         component: ProjectsView,

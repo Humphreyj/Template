@@ -20,8 +20,8 @@ const { handleUserSelect } = useProfileStore()
 const { profileFormModal } = storeToRefs(useModalStore())
 
 const handleNavigation = async (user) => {
-    handleUserSelect(user)
     await router.push({ name: 'Profile Details', params: { id: user.id } })
+    handleUserSelect(user)
 }
 const { height } = useWindowSize()
 
