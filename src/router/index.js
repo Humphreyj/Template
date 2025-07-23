@@ -77,6 +77,16 @@ const routes = [
             viewLoaded: false,
         },
     },
+    {
+        path: '/banking',
+        component: () => import('@/views/BankingView.vue'),
+        name: 'Banking',
+        meta: {
+            transition: 'fade',
+            order: 4,
+            viewLoaded: false,
+        },
+    },
 ]
 
 const router = createRouter({

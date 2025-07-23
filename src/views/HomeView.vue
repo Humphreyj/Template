@@ -14,11 +14,6 @@ import { progressGraphOptions } from '@/utils/progressGraph.js'
 import { progressSeries } from '@/utils/progressGraph.js'
 
 import MessagesList from '@/demo/MessagesList.vue'
-// Pinia
-
-// Utils
-// const props = defineProps({})
-// const emit = defineEmits()
 </script>
 
 <template>
